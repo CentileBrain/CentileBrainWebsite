@@ -15,7 +15,7 @@ export default function Graphs(props) {
 
     function renderSwitchLeft() {
         let filePath =
-            'https://raw.githubusercontent.com/CentileBrain/CentileBrainWebsite/main/';
+            'https://raw.githubusercontent.com/patrick-cui/brainproject/main/';
         //let filePath = "";
         if (props.gender === ``) {
             return '';
@@ -97,7 +97,7 @@ export default function Graphs(props) {
  //https://raw.githubusercontent.com/CentileBrain/CentileBrainWebsite/main/
     function renderSwitchRight() {
         let filePath =
-            'https://raw.githubusercontent.com/CentileBrain/CentileBrainWebsite/main/';
+            'https://raw.githubusercontent.com/patrick-cui/brainproject/main/';
         if (props.gender === ``) {
             return '';
         }

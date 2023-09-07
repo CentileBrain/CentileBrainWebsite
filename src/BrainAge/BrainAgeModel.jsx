@@ -32,13 +32,13 @@ export default function BrainAgeModelPage(props) {
         <sections>
             <Header></Header>
 
-            <nav style={{ width: '425px' }}>
+            <nav>
                 <Link to="/brainAge">
                     <span>Generate Developmental BrainAGE from your sample</span>
                 </Link>
-                {/*
+                
                 <Link to='/brainAge2'><span>Generate BrainAGE for different age groups from your sample</span></Link> 
-                */}
+                
                 <div className="animation start-brainAgeModel"></div>
             </nav>
 

@@ -29,28 +29,29 @@ export default function BrainAgeModel2Page(props) {
     };
 
     function renderUrl() {
-        if (gender == 'female') {
-            var ageInt = parseInt(age);
-            if (ageInt < 6) {
-                return (
-                    'https://brainage-female.shinyapps.io/brainage_female_decade' +
-                    age +
-                    '/'
-                );
-            }
-            return (
-                'https://brainage-female2.shinyapps.io/brainage_female_decade' +
-                age +
-                '/'
-            );
-        }
-        if (age == '1' || age == '2' || age == '3') {
-            return 'https://brainage.shinyapps.io/brainage_male_decade' + age + '/';
-        }
-        if (age == '9') {
-            return 'https://brainage-male2.shinyapps.io/brainage_male_decade9/';
-        }
-        return 'https://brainage-male.shinyapps.io/brainage_male_decade' + age + '/';
+        return ('https://cb-brainage.shinyapps.io/brainAGE-' + gender + '-' + age);
+        // if (gender == 'female') {
+        //     var ageInt = parseInt(age);
+        //     if (ageInt < 6) {
+        //         return (
+        //             'https://brainage-female.shinyapps.io/brainage_female_decade' +
+        //             age +
+        //             '/'
+        //         );
+        //     }
+        //     return (
+        //         'https://brainage-female2.shinyapps.io/brainage_female_decade' +
+        //         age +
+        //         '/'
+        //     );
+        // }
+        // if (age == '1' || age == '2' || age == '3') {
+        //     return 'https://brainage.shinyapps.io/brainage_male_decade' + age + '/';
+        // }
+        // if (age == '9') {
+        //     return 'https://brainage-male2.shinyapps.io/brainage_male_decade9/';
+        // }
+        // return 'https://brainage-male.shinyapps.io/brainage_male_decade' + age + '/';
     }
 
     return (
@@ -94,7 +95,7 @@ export default function BrainAgeModel2Page(props) {
                 </Grid>
 
                 <Grid item xs={12} md={1} style={{ marginLeft: '30px' }}>
-                    <Box sx={{ minWidth: 120 }}>
+                    <Box sx={{ minWidth: 150 }}>
                         <FormControl fullWidth>
                             <InputLabel id="MM-label">Select Age</InputLabel>
                             <Select
@@ -103,8 +104,11 @@ export default function BrainAgeModel2Page(props) {
                                 value={age}
                                 label="2-10"
                                 onChange={handleAgeChange}
-                            >
-                                <MenuItem value={'1'}>5&le;age&le;10</MenuItem>
+                            >   
+                                <MenuItem value={'1234'}>5&le;age&le;40 years</MenuItem>
+                                <MenuItem value={'56789'}>40&lt;age&le;90 years</MenuItem>
+
+                                {/* <MenuItem value={'1'}>5&le;age&le;10</MenuItem>
                                 <MenuItem value={'2'}>10&lt;age&le;20</MenuItem>
                                 <MenuItem value={'3'}>20&lt;age&le;30</MenuItem>
                                 <MenuItem value={'4'}>30&lt;age&le;40</MenuItem>
@@ -112,7 +116,7 @@ export default function BrainAgeModel2Page(props) {
                                 <MenuItem value={'6'}>50&lt;age&le;60</MenuItem>
                                 <MenuItem value={'7'}>60&lt;age&le;70</MenuItem>
                                 <MenuItem value={'8'}>70&lt;age&le;80</MenuItem>
-                                <MenuItem value={'9'}>80&lt;age&le;90</MenuItem>
+                                <MenuItem value={'9'}>80&lt;age&le;90</MenuItem> */}
                             </Select>
                         </FormControl>
                     </Box>
@@ -123,11 +127,13 @@ export default function BrainAgeModel2Page(props) {
                 <Grid item xs={12} md={1}></Grid>
                 <Grid item xs={12} md={10}>
                     <div style={{ alignItems: 'center' }}>
+                    {(gender != '' && age != '') && (
                         <Iframe
                             url={renderUrl()}
                             width="100%"
                             height="1000px"
                         ></Iframe>
+                    )}
                     </div>
                 </Grid>
                 <Grid item xs={12} md={1}></Grid>

@@ -179,7 +179,12 @@ export default function Graphs(props) {
 
     function renderHtmlLeft(url) {
         if (url) {
-            fetch(url)
+            fetch(url,{
+                method: "GET",
+                headers: {
+                  Authorization: `token personalaccesstoken ` 
+                }
+              })
                 .then(async fileText => (html1 = await fileText.text()))
                 .then(() => {
                     document.getElementsByTagName(
@@ -193,7 +198,12 @@ export default function Graphs(props) {
 
     function renderHtmlRight(url) {
         if (url) {
-            fetch(url)
+            fetch(url,{
+                method: "GET",
+                headers: {
+                  Authorization: `token personalaccesstoken ` 
+                }
+              })
                 .then(async fileText => (html2 = await fileText.text()))
                 .then(() => {
                     document.getElementsByTagName(

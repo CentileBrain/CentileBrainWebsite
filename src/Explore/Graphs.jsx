@@ -14,9 +14,9 @@ export default function Graphs(props) {
     }
 
     function renderSwitchLeft() {
-        let filePath =
-            'https://raw.githubusercontent.com/patrick-cui/BrainProject/main/';
-        //let filePath = "";
+        //let filePath =
+            //'https://raw.githubusercontent.com/CentileBrain/CentileBrainWebsite/main/';
+        let filePath = "";
         if (props.gender === ``) {
             return '';
         }
@@ -94,10 +94,10 @@ export default function Graphs(props) {
             return filePath + '/' + props.area + '.html';
         }
     }
-
+ //https://raw.githubusercontent.com/CentileBrain/CentileBrainWebsite/main/
     function renderSwitchRight() {
         let filePath =
-            'https://raw.githubusercontent.com/patrick-cui/BrainProject/main/';
+            '';
         if (props.gender === ``) {
             return '';
         }

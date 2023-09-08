@@ -199,12 +199,14 @@ export default function Graphs(props) {
 
     function renderHtmlRight(url) {
         if (url) {
-            fetch(url,{
-                method: "GET",
-                headers: {
-                  Authorization: `token personalaccesstoken ` 
-                }
-              })
+            fetch(url
+            //     ,{
+            //     method: "GET",
+            //     headers: {
+            //       Authorization: `token personalaccesstoken ` 
+            //     }
+            //   }
+              )
                 .then(async fileText => (html2 = await fileText.text()))
                 .then(() => {
                     document.getElementsByTagName(

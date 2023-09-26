@@ -12,11 +12,10 @@ export default function Graphs(props) {
         }
         return '100%';
     }
-
+    
     function renderSwitchLeft() {
-        let filePath =
-            'https://raw.githubusercontent.com/patrick-cui/brainproject/main/';
-        //let filePath = "";
+        let filePath = 'https://raw.githubusercontent.com/CentileBrain/CentileBrainWebsite/main/';
+
         if (props.gender === ``) {
             return '';
         }
@@ -38,22 +37,34 @@ export default function Graphs(props) {
             }
             switch (props.value) {
                 case 'thalamus':
-                    return filePath + '/1.html';
+                    filePath += '/1';
+                    break;
                 case 'caudate':
-                    return filePath + '/3.html';
+                    filePath += '/3';
+                    break;
                 case 'putamen':
-                    return filePath + '/5.html';
+                    filePath += '/5';
+                    break;
                 case 'pallidum':
-                    return filePath + '/7.html';
+                    filePath += '/7';
+                    break;
                 case 'hippocampus':
-                    return filePath + '/9.html';
+                    filePath += '/9';
+                    break;
                 case 'amygdala':
-                    return filePath + '/11.html';
+                    filePath += '/11';
+                    break;
                 case 'nucleusaccumbens':
-                    return filePath + '/13.html';
-                default:
-                    return '';
+                    filePath += '/13';
+                    break;
             }
+        if (props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                return filePath + '.png';
+            }
+            if (!props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                return filePath + '.html';
+            } 
+            return '';
         }
 
         if (props.morphometric === 'thickness') {
@@ -72,8 +83,15 @@ export default function Graphs(props) {
             if (props.gender === 'male' && !props.MFPCurve) {
                 filePath = filePath + 'src/Explore/data/ct/maleCentile';
             }
-            console.log(filePath + '/' + props.thickness + '.html');
-            return filePath + '/' + props.thickness + '.html';
+            
+            if (props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                filePath += '/' + props.thickness + '.png';
+            }
+            if (!props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                filePath += '/' + props.thickness + '.html';
+            } 
+            console.log(filePath);
+            return filePath;
         } else {
             if (props.area === '') {
                 return '';
@@ -90,14 +108,21 @@ export default function Graphs(props) {
             if (props.gender === 'male' && !props.MFPCurve) {
                 filePath = filePath + 'src/Explore/data/ca/maleCentile';
             }
-            console.log(filePath + '/' + props.area + '.html');
-            return filePath + '/' + props.area + '.html';
+        
+            if (props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                filePath += '/' + props.area + '.png';
+            }
+            if (!props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                filePath += '/' + props.area + '.html';
+            } 
+            console.log(filePath);
+            file
+            return filePath;
         }
     }
- //https://raw.githubusercontent.com/CentileBrain/CentileBrainWebsite/main/
+ 
     function renderSwitchRight() {
-        let filePath =
-            'https://raw.githubusercontent.com/patrick-cui/brainproject/main/';
+        let filePath = 'https://raw.githubusercontent.com/CentileBrain/CentileBrainWebsite/main/';
         if (props.gender === ``) {
             return '';
         }
@@ -119,22 +144,34 @@ export default function Graphs(props) {
             }
             switch (props.value) {
                 case 'thalamus':
-                    return filePath + '/2.html';
+                    filePath +='/2';
+                    break;
                 case 'caudate':
-                    return filePath + '/4.html';
+                    filePath += '/4';
+                    break;
                 case 'putamen':
-                    return filePath + '/6.html';
+                    filePath += '/6';
+                    break;
                 case 'pallidum':
-                    return filePath + '/8.html';
+                    filePath += '/8';
+                    break;
                 case 'hippocampus':
-                    return filePath + '/10.html';
+                    filePath += '/10';
+                    break;
                 case 'amygdala':
-                    return filePath + '/12.html';
+                    filePath += '/12';
+                    break;
                 case 'nucleusaccumbens':
-                    return filePath + '/14.html';
-                default:
-                    return '';
+                    filePath += '/14';
+                    break;
             }
+            if (props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                return filePath + '.png';
+            }
+            if (!props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                return filePath + '.html';
+            } 
+            return '';
         }
         if (props.morphometric === 'thickness') {
             if (props.thickness === '') {
@@ -153,8 +190,14 @@ export default function Graphs(props) {
                 filePath = filePath + 'src/Explore/data/ct/maleCentile';
             }
             let value = 34 + parseInt(props.thickness);
-            console.log(filePath + '/' + value.toString() + '.html');
-            return filePath + '/' + value + '.html';
+            if (props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                filePath += '/' + value.toString() + '.png';
+            }
+            if (!props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                filePath += '/' + value.toString() + '.html';
+            } 
+            console.log(filePath);
+            return filePath;
         } else {
             if (props.area === '') {
                 return '';
@@ -172,41 +215,37 @@ export default function Graphs(props) {
                 filePath = filePath + 'src/Explore/data/ca/maleCentile';
             }
             let value = 34 + parseInt(props.area);
-            console.log(filePath + '/' + value.toString() + '.html');
-            return filePath + '/' + value.toString() + '.html';
+            if (props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                filePath += '/' + value.toString() + '.png';
+            }
+            if (!props.MFPCurve && (props.gender === 'male' || props.gender === 'female')) {
+                filePath += '/' + value.toString() + '.html';
+            } 
+            console.log(filePath);
+            file
+            return filePath;
         }
     }
 
     function renderHtmlLeft(url) {
         if (url) {
-            fetch(url
-                // ,{
-                // method: "GET",
-                // headers: {
-                //   Authorization: `token personalaccesstoken ` 
-                // }}
-                )
+            fetch(url)
                 .then(async fileText => (html1 = await fileText.text()))
-                .then(() => {
+                .then((data) => {
                     document.getElementsByTagName(
                         'iframe'
                     )[0].src = URL.createObjectURL(
                         new Blob([html1], { type: 'text/html' })
                     );
                 });
+              
+                
         }
     }
 
     function renderHtmlRight(url) {
         if (url) {
-            fetch(url
-            //     ,{
-            //     method: "GET",
-            //     headers: {
-            //       Authorization: `token personalaccesstoken ` 
-            //     }
-            //   }
-              )
+            fetch(url)
                 .then(async fileText => (html2 = await fileText.text()))
                 .then(() => {
                     document.getElementsByTagName(
@@ -227,20 +266,55 @@ export default function Graphs(props) {
             <Grid item xs={12} md={1}></Grid>
             <Grid item xs={12} md={5}>
                 <div style={{ alignItems: 'center' }}>
-                    <Iframe
-                        url={renderHtmlLeft(renderSwitchLeft())}
-                        width={renderWidth()}
-                        height="450px"
-                    ></Iframe>
+                    {
+                        props.MFPCurve && (props.gender==='male' || props.gender==='female') 
+                        ?
+                        <div>
+                            <img 
+                                src={renderSwitchLeft()}
+                                width={renderWidth()}
+                                height="450px"
+                            ></img>
+                        </div>
+                        // <Iframe 
+                        //     url={renderSwitchLeft()}
+                        //     width={renderWidth()}
+                        //     height="450px"
+                        // ></Iframe> 
+                        :
+                        <Iframe
+                            url={renderHtmlLeft(renderSwitchLeft())}
+                            width={renderWidth()}
+                            height="450px"
+                        ></Iframe>
+                    }
+                    
                 </div>
             </Grid>
             <Grid item xs={12} md={5}>
                 <div style={{ alignItems: 'center' }}>
-                    <Iframe
-                        url={renderHtmlRight(renderSwitchRight())}
-                        width={renderWidth()}
-                        height="450px"
-                    ></Iframe>
+                {
+                        props.MFPCurve && (props.gender==='male' || props.gender==='female') 
+                        ?
+                        <div>
+                            <img 
+                                src={renderSwitchRight()}
+                                width={renderWidth()}
+                                height="450px"
+                            ></img>
+                        </div>
+                        // <Iframe 
+                        //     url={renderSwitchRight()}
+                        //     width={renderWidth()}
+                        //     height="450px"
+                        // ></Iframe> 
+                        :
+                        <Iframe
+                            url={renderHtmlRight(renderSwitchRight())}
+                            width={renderWidth()}
+                            height="450px"
+                        ></Iframe>
+                    }
                 </div>
             </Grid>
             <Grid item xs={12} md={1}></Grid>

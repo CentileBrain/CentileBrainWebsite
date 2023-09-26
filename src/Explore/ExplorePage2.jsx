@@ -43,7 +43,7 @@ export default function ExplorePage2(props) {
     const handleAreaChange = event => {
         setArea(event.target.value);
     };
-    const [MFPCurve, setMFPCurve] = React.useState(true);
+    const [MFPCurve, setMFPCurve] = React.useState(false);
     const handleCurveChange = event => {
         setMFPCurve(!MFPCurve);
     };
@@ -330,17 +330,6 @@ export default function ExplorePage2(props) {
                             <FormControlLabel
                                 control={
                                     <Switch
-                                        checked={MFPCurve}
-                                        onChange={handleCurveChange}
-                                        color="primary"
-                                        name="mfp"
-                                    />
-                                }
-                                label="MFP Regression"
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Switch
                                         checked={!MFPCurve}
                                         onChange={handleCurveChange}
                                         color="primary"
@@ -348,6 +337,17 @@ export default function ExplorePage2(props) {
                                     />
                                 }
                                 label="Centile Curves"
+                            />
+                            <FormControlLabel
+                                control={
+                                    <Switch
+                                        checked={MFPCurve}
+                                        onChange={handleCurveChange}
+                                        color="primary"
+                                        name="mfp"
+                                    />
+                                }
+                                label="MFP Regression"
                             />
                         </FormGroup>
                     </FormControl>

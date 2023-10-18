@@ -33,18 +33,21 @@ function Footer() {
                 </Grid>
                 <Grid item xs={1} md={1}>
                 </Grid>
+
                 <Grid item xs={12} md={4}>
                     <Grid item xs={12}>
-                        <p style={{textAlign: "center"}}>
-                            Interactive map of website visits
-                        </p>
+                        
                     </Grid>
                         <Grid item xs={12}>
-                            <div>
+                            
+                            <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
                                 <Map />
                             </div>
                         </Grid>
                 </Grid>
+
+                
+
             </Grid>
             </div>
         </footer>

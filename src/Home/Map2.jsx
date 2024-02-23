@@ -1,27 +1,36 @@
-import React, { useEffect } from 'react';
-//<script type="text/javascript" src="//rf.revolvermaps.com/0/0/1.js?i=5hzi3da1uif&amp;s=220&amp;m=0&amp;v=false&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
-function Map() {
-  useEffect(() => {
-    // Add your script here
-    const script = document.createElement('script');
-    script.src = '//rf.revolvermaps.com/0/0/1.js?i=5hzi3da1uif&amp;s=220&amp;m=0&amp;v=false&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000';
-    script.async = true;
-    // Load the script inside the specific div with the id "mapContainer"
-    const mapContainer = document.getElementById('mapContainer');
-    if (mapContainer) {
-      mapContainer.appendChild(script);
-    }
-    return () => {
-      // Remove the script when the component unmounts
-      if (mapContainer && mapContainer.contains(script)) {
-        mapContainer.removeChild(script);
+// ClustrmapsComponent.jsx
+import React from 'react';
+
+class Map extends React.Component {
+    componentDidMount() {
+        console.log('Component did mount');
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.id = 'clustrmaps';
+        script.src = '//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=500&t=n&d=_87YyRVEFCeXP807NcNBvqGZhHxg5VU2ynROMMrqq6I&co=005998';
+      
+        script.onload = () => {
+          // The script has been successfully loaded, you can now initialize Clustrmaps
+          this.initClustrmaps();
+        };
+      
+        document.head.appendChild(script);
+      }
+      initClustrmaps() {
+        // If ClustrMap is the correct global variable provided by the Clustrmaps script
+        if (window.ClustrMap) {
+          // Example initialization, make sure to use the correct API provided by Clustrmaps
+          window.ClustrMap.Init();
         }
-      };
-    }, []);
-  return (
-    <div id="mapContainer">
-    </div>
-  );
-};
+      }
+  
+    render() {
+      return (
+        <div>
+          {/* Additional JSX content if needed */}
+        </div>
+      );
+    }
+  }
 
 export default Map;

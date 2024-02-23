@@ -50,15 +50,22 @@ export default function PublicationsPage(props) {
         {
             info:
                 'Ge R, Yu Y, Qi Y, Haas S, etc, Thompson P, Frangou S.  ' +
-                'Normative Modeling of Brain Morphometry Across the Lifespan using CentileBrain: Algorithm Benchmarking and Model Optimization. 2023; doi: 10.1101/2023.01.30.523509',
-            link: 'https://www.biorxiv.org/content/10.1101/2023.01.30.523509v1',
+                'Normative Modeling of Brain Morphometry Across the Lifespan using CentileBrain: Algorithm Benchmarking and Model Optimization. Lancet Digit Health. 2024; doi: 10.1016/S2589-7500(23)00250-9',
+            link: 'https://doi.org/10.1016/S2589-7500(23)00250-9',
             id: uuid(),
         },
         {
             info:
                 'Haas S, Ge R, etc, Frangou S.  ' +
-                'Normative modeling of brain morphometry in Clinical High-Risk for Psychosis. 2023; doi: 10.1101/2023.01.17.523348',
-            link: 'https://www.biorxiv.org/content/10.1101/2023.01.17.523348v1',
+                'Normative modeling of brain morphometry in Clinical High-Risk for Psychosis. JAMA Psychiatry. 2024; doi: 10.1001/jamapsychiatry.2023.3850',
+            link: 'https://www.jamanetwork.com/journals/jamapsychiatry/fullarticle/2810624',
+            id: uuid(),
+        },
+        {
+            info:
+                'Yu Y, Cui H, etc, Thompson P, Frangou S, Ge R.  ' +
+                'Brain-Age Prediction: Systematic Evaluation of Site Effects, and Sample Age Range and Size. 2024; doi: 10.1101/2023.11.06.565917',
+            link: 'https://www.biorxiv.org/content/10.1101/2023.11.06.565917v1',
             id: uuid(),
         },
     ];

@@ -1,13 +1,31 @@
 import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import Map from './Map';
+import Map from './Map2';
+import { useEffect } from 'react';
 
 import Grid from '@material-ui/core/Grid';
 
 function Footer() {
     const linkStyle = { textDecoration: 'none', color: 'white', textAlign: 'left' };
     const rowStyle = { paddingTop: '20px', textAlign: 'left'  };
+    useEffect(() => {
+        // Add your script here
+        const script = document.createElement('script');
+        script.src = '//rf.revolvermaps.com/0/0/1.js?i=5hzi3da1uif&amp;s=220&amp;m=0&amp;v=false&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000';
+        script.async = true;
+        // Load the script inside the specific div with the id "mapContainer"
+        const mapContainer = document.getElementById('mapContainer');
+        if (mapContainer) {
+          mapContainer.appendChild(script);
+        }
+        return () => {
+          // Remove the script when the component unmounts
+          if (mapContainer && mapContainer.contains(script)) {
+            mapContainer.removeChild(script);
+            }
+          };
+        }, []);
     return (
         <footer id="footer" className="dark" style={{ background: '#001529', color: 'white' , paddingTop: '20px'}}>
         <div style={{ paddingLeft: '2rem', paddingRight: '2rem'}}>
@@ -40,8 +58,11 @@ function Footer() {
                     </Grid>
                         <Grid item xs={12}>
                             
-                            <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                            {/* <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
                                 <Map />
+                            </div> */}
+                            <div id="mapContainer">
+
                             </div>
                         </Grid>
                 </Grid>

@@ -71,7 +71,13 @@ function App() {
                     <Route path="/brainAGE2">
                         <BrainAgeModel2Page/>
                     </Route>
-                    
+                    <Route
+                        path="/eHarmonize"
+                        component={() => {
+                            window.location.href = 'https://github.com/ahzhu/eharmonize';
+                            return null;
+                        }}
+                    />
                     <Route
                         path="/engima"
                         component={() => {

@@ -116,13 +116,30 @@ export default function Features() {
             </Grid>
 
             <Grid container spacing={10} alignItems={'stretch'}>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={2}>
                     <Grid item xs={12}></Grid>
                     <Grid
                         item
                         xs={12}
                         style={{ paddingTop: '1rem', textAlign: 'center' }}
                     ></Grid>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Grid item xs={12}>
+                        <Link to="/eHarmonize">
+                            <img
+                                src="https://centilebrainwebsiteimage.s3.amazonaws.com/eharmonize.JPG"
+                                width="100%"
+                            />
+                        </Link>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        style={{ paddingTop: '1rem', textAlign: 'center' }}
+                    >
+                        <h5>eHarmonize</h5>
+                    </Grid>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Grid item xs={12}>
@@ -141,7 +158,7 @@ export default function Features() {
                         <h5>Learn More About ENIGMA Consortium</h5>
                     </Grid>
                 </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={2}>
                     <Grid item xs={12}></Grid>
                     <Grid
                         item

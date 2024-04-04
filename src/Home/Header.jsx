@@ -69,6 +69,14 @@ class Header extends React.Component {
                     </a>
                     <Link to="/brainAGE" />
                 </Menu.Item>
+                <Menu.Item key="eHarmonize">
+                    <a>
+                        <span>eHarmonize
+
+                        </span>
+                    </a>
+                    <Link to="eHarmonize" />
+                </Menu.Item>
                 <Menu.Item key="tutorial">
                     <a>
                         <span>Tutorial</span>

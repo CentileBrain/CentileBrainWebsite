@@ -115,7 +115,7 @@ class Header extends React.Component {
                 )}
                 {menuMode === 'inline' && showMobileMenu && menu}
                 <Row>
-                    <Col xxl={20} xl={20} lg={20} md={16} sm={0} xs={0}>
+                    <Col xxl={20} xl={20} lg={20} md={16} sm={0} xs={0}  offset={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <div className="header-meta">
                             {menuMode === 'horizontal' ? (
                                 <div id="menu">{menu}</div>

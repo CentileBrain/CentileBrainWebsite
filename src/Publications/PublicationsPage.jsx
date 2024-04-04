@@ -70,7 +70,7 @@ export default function PublicationsPage(props) {
         },
         {
             info: 
-                "Alyssa H. Zhu, etc, Paul M. Thompson, Neda Jahanshad, Alzheimer’s DiseaseNeuroimaging Initiative.  " +
+                "Alyssa H. Zhu, etc, Paul M. Thompson, Neda Jahanshad, Alzheimer’s Disease Neuroimaging Initiative.  " +
                  'Lifespan reference curves for harmonizing multi-site regional brain white matter metrics from diffusion MRI. 2024; doi: 10.1101/2024.02.22.581646',
             link: 'https://www.biorxiv.org/content/10.1101/2024.02.22.581646', 
             id: uuid(),

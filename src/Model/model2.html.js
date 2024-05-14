@@ -217,8 +217,8 @@ names(data) &lt;- colnames(data_original)</code></pre>
 data_centered &lt;- data
 for (region in 3:ncol(data_original)) {
   if (sum(data_original[,region]) != 0){
-    regionMean[region-2] &lt;- mean(data[,region])
-    data_centered[,region]  &lt;-  data[,region] - mean(data[,region])
+    regionMean[region-2] &lt;- mean_train[,region-2] # mean_train is the mean of the training data, please contact us for this data
+    data_centered[,region]  &lt;-  data[,region] - regionMean[region-2]
   } else {
     regionMean[region-2] &lt;- 0
     data_centered[,region]  &lt;-  rep(0, nrow(data_original))

@@ -79,12 +79,15 @@ export default function ContactPage(props) {
             //     .catch(err => {
             //         console.error(err);
             //     });
+            // emailjs.init({
+            //     publicKey: 'tZi006BbQ7jTimFZQkS_q',
+            //   });
             emailjs
                 .sendForm(
                     serviceId,
                     templateId,
-                    e.target, 
-                    'centilebrainwebsite'
+                    e.target,
+                    'rQKaZXm2IjTZ9CKn3'
                 )
                 .then(res => {
                     console.log(res);

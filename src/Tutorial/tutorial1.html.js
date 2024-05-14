@@ -296,18 +296,18 @@ names(data_unseen) &lt;- colnames(data_unseen_original)</code></pre>
 </div>
 <div id="center-data-1" class="section level4">
 <h4>4.3 Center data</h4>
-<pre class="r"><code>regionMean_unseen &lt;- NULL
+<pre class="r"><code>regionMean_train &lt;- NULL
 data_unseen_centered &lt;- data_unseen
 for (region in 3:ncol(data_unseen)) {
   if (sum(data_unseen[,region]) != 0){
-    regionMean_unseen[region-2] &lt;- mean(data_unseen_original[,region])
-    data_unseen_centered[,region] &lt;- data_unseen[,region] - mean(data_unseen[,region])
+    regionMean_train[region-2] &lt;- mean(data_training[,region])
+    data_unseen_centered[,region] &lt;- data_unseen[,region] - regionMean_train[,region-2]
   } else {
-    regionMean_unseen[region-2] &lt;- 0
+    regionMean_train[region-2] &lt;- 0
     data_unseen_centered[,region] &lt;- rep(0, nrow(data_unseen))
   }
 }
-regionMean_unseen &lt;- regionMean_unseen[-1]</code></pre>
+regionMean_train &lt;- regionMean_train[-1]</code></pre>
 </div>
 </div>
 <div id="apply-trained-models-to-unseen-data" class="section level2">
@@ -320,7 +320,7 @@ newdata &lt;- data_unseen_centered[,c(&quot;age&quot;,&quot;ICV&quot;)]
 for (region in 1:ncol(regions)){
   if (sum(regions[,region]) != 0){
     predicted &lt;- predict(mfpModel_list[[region]],newdata = newdata)
-    prediction_list[region] &lt;- data.frame(predicted + regionMean_unseen[region])
+    prediction_list[region] &lt;- data.frame(predicted + regionMean_train[region])
     z_score &lt;- (regions[region]-predicted)/sqrt(sum(mfpModel_list[[region]]$residuals**2)/length(mfpModel_list[[region]]$residuals))
     z_score_list[region] &lt;- z_score
   } else {

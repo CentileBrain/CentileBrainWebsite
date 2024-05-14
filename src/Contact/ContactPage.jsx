@@ -62,18 +62,34 @@ export default function ContactPage(props) {
         ...props.content,
     };
 
+    const serviceId = 'service_4knc8gc';
+    const templateId = 'template_oo5l20m';
     const onSubmit = e => {
         e.preventDefault();
 
         if (checked) {
+            // emailjs
+            //     .sendForm(
+            //         'service_6tv122f',
+            //         'template_yrqauic',
+            //         e.target,
+            //         'user_WPtiObpoETDwcD69DXOVA'
+            //     )
+            //     .then(res => {})
+            //     .catch(err => {
+            //         console.error(err);
+            //     });
             emailjs
                 .sendForm(
-                    'service_6tv122f',
-                    'template_yrqauic',
-                    e.target,
-                    'user_WPtiObpoETDwcD69DXOVA'
+                    serviceId,
+                    templateId,
+                    e.target, 
+                    'centilebrainwebsite'
                 )
-                .then(res => {})
+                .then(res => {
+                    console.log(res);
+                    console.log('Email successfully sent!');
+                })
                 .catch(err => {
                     console.error(err);
                 });

@@ -64,8 +64,8 @@ export default function PublicationsPage(props) {
         {
             info:
                 'Yu Y, Cui H, etc, Thompson P, Frangou S, Ge R.  ' +
-                'Brain-Age Prediction: Systematic Evaluation of Site Effects, and Sample Age Range and Size. 2024; doi: 10.1101/2023.11.06.565917',
-            link: 'https://www.biorxiv.org/content/10.1101/2023.11.06.565917v1',
+                'Brain-Age Prediction: Systematic Evaluation of Site Effects, and Sample Age Range and Size. Human Brain Mapping. 2024; doi: 10.1002/hbm.26768',
+            link: 'https://onlinelibrary.wiley.com/doi/10.1002/hbm.26768',
             id: uuid(),
         },
         {
@@ -105,7 +105,10 @@ function Publication(props) {
                     variant="outlined"
                     size="small"
                     style={{ display: 'inline-block' }}
-                    onClick={() => (window.location.href = link)}
+                    //onClick={() => (window.location.href = link)}
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     Link
                 </Button>

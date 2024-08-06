@@ -105,7 +105,6 @@ function Publication(props) {
                     variant="outlined"
                     size="small"
                     style={{ display: 'inline-block' }}
-                    //onClick={() => (window.location.href = link)}
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"

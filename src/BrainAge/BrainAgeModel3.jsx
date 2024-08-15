@@ -1,10 +1,12 @@
-import './brainAge.css';
+import './test.css';
 
 import {
     FormControl,
     FormControlLabel,
     RadioGroup,
     Switch,
+    ButtonGroup,
+    Button,
     Box,
     InputLabel,
     Select,
@@ -17,15 +19,42 @@ import { Link } from 'react-router-dom';
 
 import Header from '../Home/Header';
 
-export default function BrainAgeModelPage(props) {
+export default function BrainAgeModel3Page(props) {
     // true = female
     const [gender, setGender] = React.useState('');
     const handleGenderChange = event => {
         setGender(event.target.value);
     };
+    const [age, setAge] = React.useState('');
+    const handleAgeChange = event => {
+        setAge(event.target.value);
+    };
 
     function renderUrl() {
-        return 'https://brainage.shinyapps.io/' + gender + '/';
+        
+        return ('https://cb-network-brainage.shinyapps.io/' + gender + '_' + age + '/');
+        // if (gender == 'female') {
+        //     var ageInt = parseInt(age);
+        //     if (ageInt < 6) {
+        //         return (
+        //             'https://brainage-female.shinyapps.io/brainage_female_decade' +
+        //             age +
+        //             '/'
+        //         );
+        //     }
+        //     return (
+        //         'https://brainage-female2.shinyapps.io/brainage_female_decade' +
+        //         age +
+        //         '/'
+        //     );
+        // }
+        // if (age == '1' || age == '2' || age == '3') {
+        //     return 'https://brainage.shinyapps.io/brainage_male_decade' + age + '/';
+        // }
+        // if (age == '9') {
+        //     return 'https://brainage-male2.shinyapps.io/brainage_male_decade9/';
+        // }
+        // return 'https://brainage-male.shinyapps.io/brainage_male_decade' + age + '/';
     }
 
     return (
@@ -108,7 +137,7 @@ export default function BrainAgeModelPage(props) {
                             Generate Network-BrainAGE for your sample
                         </span>
                     </Link>
-                    <div className="animation start-option1"></div>
+                    <div className="animation start-option3"></div>
                 </nav>
 
             <Grid
@@ -135,20 +164,67 @@ export default function BrainAgeModelPage(props) {
                         </FormControl>
                     </Box>
                 </Grid>
-                <Grid item xs={12} md={1}></Grid>
+
+                <Grid item xs={12} md={1} style={{ marginLeft: '30px' }}>
+                    <Box sx={{ minWidth: 150 }}>
+                        
+                                {(gender == "male") && (
+                               <FormControl fullWidth>
+                            <InputLabel id="MM-label">Select Age</InputLabel>     
+                            <Select
+                                labelId="MM-label"
+                                id="MM-select"
+                                value={age}
+                                label="2-10"
+                                onChange={handleAgeChange}
+                            >   
+                                    <MenuItem value={'young'}>1&le;age&lt;40 years</MenuItem>
+                                    <MenuItem value={'old'}>40&le;age&lt;93 years</MenuItem>
+                                      </Select>
+                                </FormControl>
+                                )}
+                                {(gender == "female") && (
+                                    <FormControl fullWidth>
+                            <InputLabel id="MM-label">Select Age</InputLabel>     
+                                    <Select
+                                    labelId="MM-label"
+                                    id="MM-select"
+                                    value={age}
+                                    label="2-10"
+                                    onChange={handleAgeChange}
+                                >  
+                                    <MenuItem value={'young'}>1&le;age&lt;40 years</MenuItem>
+                                    <MenuItem value={'old'}>40&le;age&lt;95 years</MenuItem>
+                                    </Select>
+                                    </FormControl>
+                                )}
+
+                                {/* <MenuItem value={'1'}>5&le;age&le;10</MenuItem>
+                                <MenuItem value={'2'}>10&lt;age&le;20</MenuItem>
+                                <MenuItem value={'3'}>20&lt;age&le;30</MenuItem>
+                                <MenuItem value={'4'}>30&lt;age&le;40</MenuItem>
+                                <MenuItem value={'5'}>40&lt;age&le;50</MenuItem>
+                                <MenuItem value={'6'}>50&lt;age&le;60</MenuItem>
+                                <MenuItem value={'7'}>60&lt;age&le;70</MenuItem>
+                                <MenuItem value={'8'}>70&lt;age&le;80</MenuItem>
+                                <MenuItem value={'9'}>80&lt;age&le;90</MenuItem> */}
+                          
+                        
+                    </Box>
+                </Grid>
             </Grid>
 
             <Grid container spacing={3} style={{ alignItems: 'center' }}>
                 <Grid item xs={12} md={1}></Grid>
                 <Grid item xs={12} md={10}>
                     <div style={{ alignItems: 'center' }}>
-                        {gender != '' && (
-                            <Iframe
-                                url={renderUrl()}
-                                width="100%"
-                                height="1000px"
-                            ></Iframe>
-                        )}
+                    {(gender != '' && age != '') && (
+                        <Iframe
+                            url={renderUrl()}
+                            width="100%"
+                            height="1000px"
+                        ></Iframe>
+                    )}
                     </div>
                 </Grid>
                 <Grid item xs={12} md={1}></Grid>

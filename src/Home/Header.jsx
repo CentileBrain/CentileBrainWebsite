@@ -69,6 +69,14 @@ class Header extends React.Component {
                     </a>
                     <Link to="/brainAGE" />
                 </Menu.Item>
+                <Menu.Item key="faq">
+                    <a>
+                        <span>FAQ
+
+                        </span>
+                    </a>
+                    <Link to="faq" />
+                </Menu.Item>
                 <Menu.Item key="eHarmonize">
                     <a>
                         <span>eHarmonize
@@ -91,7 +99,7 @@ class Header extends React.Component {
                 </Menu.Item>
                 <Menu.Item key="team">
                     <a>
-                        <span>Team</span>
+                        <span>Core Team</span>
                     </a>
                     <Link to="/team" />
                 </Menu.Item>

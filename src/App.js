@@ -15,11 +15,15 @@ import TutorialPage3 from './Tutorial/TutorialPage3';
 import Home from './Home';
 import BrainAgeModelPage from './BrainAge/BrainAgeModel';
 import BrainAgeModel2Page from './BrainAge/BrainAgeModel2';
+import BrainAgeModel3Page from './BrainAge/BrainAgeModel3'; 
 import TutorialPage4 from './Tutorial/TutorialPage4';
+import FaqPage from './Faq/FaqPage';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
     return (
         <Router>
+            <ScrollToTop />
             <div>
                 <Switch>
                     <Route exact path="/">
@@ -70,6 +74,13 @@ function App() {
                     
                     <Route path="/brainAGE2">
                         <BrainAgeModel2Page/>
+                    </Route>
+                    <Route path="/brainAGE3">
+                        <BrainAgeModel3Page/>
+                    </Route>
+
+                    <Route path="/faq">
+                        <FaqPage />
                     </Route>
                     <Route
                         path="/eHarmonize"

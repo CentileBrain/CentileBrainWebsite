@@ -61,7 +61,90 @@ export default function Features() {
                 </Grid>
             </Grid>
 
+            
+
             <Grid container spacing={10} alignItems={'stretch'}>
+                <Grid item xs={12} md={4}>
+                    <Grid item xs={12}>
+                        <Link to="/brainAGE">
+                            <img
+                                src="https://centilebrainwebsiteimage.s3.amazonaws.com/Global+BrainAGE.png"
+                                width="100%"
+                            />
+                        </Link>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        style={{ paddingTop: '1rem', textAlign: 'center' }}
+                    >
+                        <h5>Global BrainAGE</h5>
+                    </Grid>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Grid item xs={12}>
+                        <Link to="/brainAGE3">
+                            <img
+                                src="https://centilebrainwebsiteimage.s3.amazonaws.com/Network+BrainAGE.jpg"
+                                width="100%"
+                            />
+                        </Link>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        style={{ paddingTop: '1rem', textAlign: 'center' }}
+                    >
+                        <h5>Network BrainAGE</h5>
+                    </Grid>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Grid item xs={12}>
+                        <Link to="/eHarmonize">
+                            <img
+                                src="https://centilebrainwebsiteimage.s3.amazonaws.com/eharmonize.JPG"
+                                width="100%"
+                            />
+                        </Link>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        style={{ paddingTop: '1rem', textAlign: 'center' }}
+                    >
+                        <h5>eHarmonize</h5>
+                    </Grid>
+                </Grid>
+                
+                
+            </Grid>
+            
+            <Grid container spacing={10} alignItems={'stretch'}>
+                {/* <Grid item xs={12} md={2}>
+                    <Grid item xs={12}></Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        style={{ paddingTop: '1rem', textAlign: 'center' }}
+                    ></Grid>
+                </Grid> */}
+                <Grid item xs={12} md={4}>
+                    <Grid item xs={12}>
+                        <Link to="/faq">
+                            <img
+                                src="https://centilebrainwebsiteimage.s3.amazonaws.com/FAQ.png"
+                                width="100%"
+                            />
+                        </Link>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        style={{ paddingTop: '1rem', textAlign: 'center' }}
+                    >
+                        <h5>Frequently Asked Questions</h5>
+                    </Grid>
+                </Grid>
                 <Grid item xs={12} md={4}>
                     <Grid item xs={12}>
                         <Link to="/team">
@@ -76,7 +159,7 @@ export default function Features() {
                         xs={12}
                         style={{ paddingTop: '1rem', textAlign: 'center' }}
                     >
-                        <h5>CentileBrain Development Team</h5>
+                        <h5>Core Team</h5>
                     </Grid>
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -96,76 +179,14 @@ export default function Features() {
                         <h5>CentileBrain Publications</h5>
                     </Grid>
                 </Grid>
-                <Grid item xs={12} md={4}>
-                    <Grid item xs={12}>
-                        <Link to="/brainAGE">
-                            <img
-                                src="https://centilebrainwebsiteimage.s3.amazonaws.com/brainAge.jpeg"
-                                width="100%"
-                            />
-                        </Link>
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        style={{ paddingTop: '1rem', textAlign: 'center' }}
-                    >
-                        <h5>The BrainAGE Model</h5>
-                    </Grid>
-                </Grid>
-            </Grid>
-
-            <Grid container spacing={10} alignItems={'stretch'}>
-                <Grid item xs={12} md={2}>
+                {/* <Grid item xs={12} md={2}>
                     <Grid item xs={12}></Grid>
                     <Grid
                         item
                         xs={12}
                         style={{ paddingTop: '1rem', textAlign: 'center' }}
                     ></Grid>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <Grid item xs={12}>
-                        <Link to="/eHarmonize">
-                            <img
-                                src="https://centilebrainwebsiteimage.s3.amazonaws.com/eharmonize.JPG"
-                                width="100%"
-                            />
-                        </Link>
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        style={{ paddingTop: '1rem', textAlign: 'center' }}
-                    >
-                        <h5>eHarmonize</h5>
-                    </Grid>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <Grid item xs={12}>
-                        <Link to="/engima">
-                            <img
-                                src="https://centilebrainwebsiteimage.s3.amazonaws.com/enigma.jpeg"
-                                width="100%"
-                            />
-                        </Link>
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        style={{ paddingTop: '1rem', textAlign: 'center' }}
-                    >
-                        <h5>Learn More About ENIGMA Consortium</h5>
-                    </Grid>
-                </Grid>
-                <Grid item xs={12} md={2}>
-                    <Grid item xs={12}></Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        style={{ paddingTop: '1rem', textAlign: 'center' }}
-                    ></Grid>
-                </Grid>
+                </Grid> */}
             </Grid>
         </div>
     );

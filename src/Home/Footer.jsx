@@ -19,12 +19,15 @@ function Footer() {
                                 <Row style={rowStyle}><Link to="/explore" style={linkStyle}>Explore the CentileBrain Dataset</Link></Row>
                                 <Row style={rowStyle}><Link to="/model" style={linkStyle}>Use CentileBrain to Generate Estimates</Link></Row>
                                 <Row style={rowStyle}><Link to="/model2" style={linkStyle}>The CentileBrain Model</Link></Row>
-                                <Row style={rowStyle}><Link to="/team" style={linkStyle}>CentileBrain Development Team</Link></Row>
+                                <Row style={rowStyle}><Link to="/brainAGE" style={linkStyle}>Global BrainAGE</Link></Row>
+                                <Row style={rowStyle}><Link to="/brainAGE3" style={linkStyle}>Network BrainAGE</Link></Row>
+                                
                             </Col>
                             <Col span={12} style={{paddingLeft: '20px'}}>
+                            <Row style={rowStyle}><Link to="/eHarmonize" style={linkStyle}>eHarmonize</Link></Row>
+                            <Row style={rowStyle}><Link to="/faq" style={linkStyle}>Frequently Asked Questions</Link></Row>
+                            <Row style={rowStyle}><Link to="/team" style={linkStyle}>CentileBrain Core Team</Link></Row>
                                 <Row style={rowStyle}><Link to="/publications" style={linkStyle}>CentileBrain Publications</Link></Row>
-                                <Row style={rowStyle}><Link to="/brainAGE" style={linkStyle}>The BrainAGE Model</Link></Row>
-                                <Row style={rowStyle}><Link to="/engima" style={linkStyle}>Learn More About ENIGMA Consortium</Link></Row>
                                 <Row style={rowStyle}></Row>
 
                             </Col>

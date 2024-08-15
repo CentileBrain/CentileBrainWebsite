@@ -57,8 +57,7 @@ export default function ContactPage(props) {
         'description': "We're here to answer questions and discuss your experience.",
         'terms': 'I agree to the terms of use and privacy policy.',
         'primary-action': 'Submit',
-        'image':
-            'https://centilebrainwebsiteimage.s3.amazonaws.com/contact.png',
+        'image': 'https://centilebrainwebsiteimage.s3.amazonaws.com/contact.png',
         ...props.content,
     };
 
@@ -83,12 +82,7 @@ export default function ContactPage(props) {
             //     publicKey: 'tZi006BbQ7jTimFZQkS_q',
             //   });
             emailjs
-                .sendForm(
-                    serviceId,
-                    templateId,
-                    e.target,
-                    'rQKaZXm2IjTZ9CKn3'
-                )
+                .sendForm(serviceId, templateId, e.target, 'rQKaZXm2IjTZ9CKn3')
                 .then(res => {
                     console.log(res);
                     console.log('Email successfully sent!');
@@ -144,7 +138,6 @@ export default function ContactPage(props) {
                                             id="firstName"
                                             label="First Name"
                                             autoFocus
-                                            
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={6}>

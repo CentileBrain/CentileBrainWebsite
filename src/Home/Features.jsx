@@ -61,8 +61,6 @@ export default function Features() {
                 </Grid>
             </Grid>
 
-            
-
             <Grid container spacing={10} alignItems={'stretch'}>
                 <Grid item xs={12} md={4}>
                     <Grid item xs={12}>
@@ -115,10 +113,8 @@ export default function Features() {
                         <h5>eHarmonize</h5>
                     </Grid>
                 </Grid>
-                
-                
             </Grid>
-            
+
             <Grid container spacing={10} alignItems={'stretch'}>
                 {/* <Grid item xs={12} md={2}>
                     <Grid item xs={12}></Grid>

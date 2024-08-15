@@ -31,8 +31,9 @@ export default function BrainAgeModel3Page(props) {
     };
 
     function renderUrl() {
-        
-        return ('https://cb-network-brainage.shinyapps.io/' + gender + '_' + age + '/');
+        return (
+            'https://cb-network-brainage.shinyapps.io/' + gender + '_' + age + '/'
+        );
         // if (gender == 'female') {
         //     var ageInt = parseInt(age);
         //     if (ageInt < 6) {
@@ -60,7 +61,7 @@ export default function BrainAgeModel3Page(props) {
     return (
         <div>
             <style>
-            {`
+                {`
               .custom-nav {
                 position: relative;
                 margin: 50px auto 0;
@@ -120,7 +121,7 @@ export default function BrainAgeModel3Page(props) {
                 left: 666px !important;
               }
             `}
-          </style>
+            </style>
             <sections>
                 <Header></Header>
                 <nav className="custom-nav">
@@ -128,78 +129,81 @@ export default function BrainAgeModel3Page(props) {
                         <span>Generate Developmental BrainAGE for your sample</span>
                     </Link>
                     <Link to="/brainAge2">
-                        <span>
-                            Generate BrainAGE for your sample
-                        </span>
+                        <span>Generate BrainAGE for your sample</span>
                     </Link>
                     <Link to="/brainAge3">
-                        <span>
-                            Generate Network-BrainAGE for your sample
-                        </span>
+                        <span>Generate Network-BrainAGE for your sample</span>
                     </Link>
                     <div className="animation start-option3"></div>
                 </nav>
 
-            <Grid
-                container
-                spacing={3}
-                style={{ alignItems: 'center', marginTop: '0.2rem' }}
-            >
-                <Grid item xs={12} md={1}></Grid>
+                <Grid
+                    container
+                    spacing={3}
+                    style={{ alignItems: 'center', marginTop: '0.2rem' }}
+                >
+                    <Grid item xs={12} md={1}></Grid>
 
-                <Grid item xs={12} md={1} style={{ marginLeft: '30px' }}>
-                    <Box sx={{ minWidth: 120 }}>
-                        <FormControl fullWidth>
-                            <InputLabel id="MM-label">Select Sex</InputLabel>
-                            <Select
-                                labelId="MM-label"
-                                id="MM-select"
-                                value={gender}
-                                label="2-10"
-                                onChange={handleGenderChange}
-                            >
-                                <MenuItem value={'female'}>Female</MenuItem>
-                                <MenuItem value={'male'}>Male</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Box>
-                </Grid>
-
-                <Grid item xs={12} md={1} style={{ marginLeft: '30px' }}>
-                    <Box sx={{ minWidth: 150 }}>
-                        
-                                {(gender == "male") && (
-                               <FormControl fullWidth>
-                            <InputLabel id="MM-label">Select Age</InputLabel>     
-                            <Select
-                                labelId="MM-label"
-                                id="MM-select"
-                                value={age}
-                                label="2-10"
-                                onChange={handleAgeChange}
-                            >   
-                                    <MenuItem value={'young'}>1&le;age&lt;40 years</MenuItem>
-                                    <MenuItem value={'old'}>40&le;age&lt;93 years</MenuItem>
-                                      </Select>
-                                </FormControl>
-                                )}
-                                {(gender == "female") && (
-                                    <FormControl fullWidth>
-                            <InputLabel id="MM-label">Select Age</InputLabel>     
-                                    <Select
+                    <Grid item xs={12} md={1} style={{ marginLeft: '30px' }}>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl fullWidth>
+                                <InputLabel id="MM-label">Select Sex</InputLabel>
+                                <Select
                                     labelId="MM-label"
                                     id="MM-select"
-                                    value={age}
+                                    value={gender}
                                     label="2-10"
-                                    onChange={handleAgeChange}
-                                >  
-                                    <MenuItem value={'young'}>1&le;age&lt;40 years</MenuItem>
-                                    <MenuItem value={'old'}>40&le;age&lt;95 years</MenuItem>
-                                    </Select>
-                                    </FormControl>
-                                )}
+                                    onChange={handleGenderChange}
+                                >
+                                    <MenuItem value={'female'}>Female</MenuItem>
+                                    <MenuItem value={'male'}>Male</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                    </Grid>
 
-                                {/* <MenuItem value={'1'}>5&le;age&le;10</MenuItem>
+                    <Grid item xs={12} md={1} style={{ marginLeft: '30px' }}>
+                        <Box sx={{ minWidth: 150 }}>
+                            {gender == 'male' && (
+                                <FormControl fullWidth>
+                                    <InputLabel id="MM-label">Select Age</InputLabel>
+                                    <Select
+                                        labelId="MM-label"
+                                        id="MM-select"
+                                        value={age}
+                                        label="2-10"
+                                        onChange={handleAgeChange}
+                                    >
+                                        <MenuItem value={'young'}>
+                                            1&le;age&lt;40 years
+                                        </MenuItem>
+                                        <MenuItem value={'old'}>
+                                            40&le;age&lt;93 years
+                                        </MenuItem>
+                                    </Select>
+                                </FormControl>
+                            )}
+                            {gender == 'female' && (
+                                <FormControl fullWidth>
+                                    <InputLabel id="MM-label">Select Age</InputLabel>
+                                    <Select
+                                        labelId="MM-label"
+                                        id="MM-select"
+                                        value={age}
+                                        label="2-10"
+                                        onChange={handleAgeChange}
+                                    >
+                                        <MenuItem value={'young'}>
+                                            1&le;age&lt;40 years
+                                        </MenuItem>
+                                        <MenuItem value={'old'}>
+                                            40&le;age&lt;95 years
+                                        </MenuItem>
+                                    </Select>
+                                </FormControl>
+                            )}
+
+                            {/* <MenuItem value={'1'}>5&le;age&le;10</MenuItem>
                                 <MenuItem value={'2'}>10&lt;age&le;20</MenuItem>
                                 <MenuItem value={'3'}>20&lt;age&le;30</MenuItem>
                                 <MenuItem value={'4'}>30&lt;age&le;40</MenuItem>
@@ -208,28 +212,26 @@ export default function BrainAgeModel3Page(props) {
                                 <MenuItem value={'7'}>60&lt;age&le;70</MenuItem>
                                 <MenuItem value={'8'}>70&lt;age&le;80</MenuItem>
                                 <MenuItem value={'9'}>80&lt;age&le;90</MenuItem> */}
-                          
-                        
-                    </Box>
+                        </Box>
+                    </Grid>
                 </Grid>
-            </Grid>
 
-            <Grid container spacing={3} style={{ alignItems: 'center' }}>
-                <Grid item xs={12} md={1}></Grid>
-                <Grid item xs={12} md={10}>
-                    <div style={{ alignItems: 'center' }}>
-                    {(gender != '' && age != '') && (
-                        <Iframe
-                            url={renderUrl()}
-                            width="100%"
-                            height="1000px"
-                        ></Iframe>
-                    )}
-                    </div>
+                <Grid container spacing={3} style={{ alignItems: 'center' }}>
+                    <Grid item xs={12} md={1}></Grid>
+                    <Grid item xs={12} md={10}>
+                        <div style={{ alignItems: 'center' }}>
+                            {gender != '' && age != '' && (
+                                <Iframe
+                                    url={renderUrl()}
+                                    width="100%"
+                                    height="1000px"
+                                ></Iframe>
+                            )}
+                        </div>
+                    </Grid>
+                    <Grid item xs={12} md={1}></Grid>
                 </Grid>
-                <Grid item xs={12} md={1}></Grid>
-            </Grid>
-        </sections>
+            </sections>
         </div>
     );
 }

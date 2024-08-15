@@ -31,7 +31,7 @@ export default function BrainAgeModelPage(props) {
     return (
         <div>
             <style>
-            {`
+                {`
               .custom-nav {
                 position: relative;
                 margin: 50px auto 0;
@@ -91,7 +91,7 @@ export default function BrainAgeModelPage(props) {
                 left: 666px !important;
               }
             `}
-          </style>
+            </style>
             <sections>
                 <Header></Header>
                 <nav className="custom-nav">
@@ -99,61 +99,57 @@ export default function BrainAgeModelPage(props) {
                         <span>Generate Developmental BrainAGE for your sample</span>
                     </Link>
                     <Link to="/brainAge2">
-                        <span>
-                            Generate BrainAGE for your sample
-                        </span>
+                        <span>Generate BrainAGE for your sample</span>
                     </Link>
                     <Link to="/brainAge3">
-                        <span>
-                            Generate Network-BrainAGE for your sample
-                        </span>
+                        <span>Generate Network-BrainAGE for your sample</span>
                     </Link>
                     <div className="animation start-option1"></div>
                 </nav>
 
-            <Grid
-                container
-                spacing={3}
-                style={{ alignItems: 'center', marginTop: '0.2rem' }}
-            >
-                <Grid item xs={12} md={1}></Grid>
+                <Grid
+                    container
+                    spacing={3}
+                    style={{ alignItems: 'center', marginTop: '0.2rem' }}
+                >
+                    <Grid item xs={12} md={1}></Grid>
 
-                <Grid item xs={12} md={1} style={{ marginLeft: '30px' }}>
-                    <Box sx={{ minWidth: 120 }}>
-                        <FormControl fullWidth>
-                            <InputLabel id="MM-label">Select Sex</InputLabel>
-                            <Select
-                                labelId="MM-label"
-                                id="MM-select"
-                                value={gender}
-                                label="2-10"
-                                onChange={handleGenderChange}
-                            >
-                                <MenuItem value={'female'}>Female</MenuItem>
-                                <MenuItem value={'male'}>Male</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Box>
+                    <Grid item xs={12} md={1} style={{ marginLeft: '30px' }}>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl fullWidth>
+                                <InputLabel id="MM-label">Select Sex</InputLabel>
+                                <Select
+                                    labelId="MM-label"
+                                    id="MM-select"
+                                    value={gender}
+                                    label="2-10"
+                                    onChange={handleGenderChange}
+                                >
+                                    <MenuItem value={'female'}>Female</MenuItem>
+                                    <MenuItem value={'male'}>Male</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12} md={1}></Grid>
                 </Grid>
-                <Grid item xs={12} md={1}></Grid>
-            </Grid>
 
-            <Grid container spacing={3} style={{ alignItems: 'center' }}>
-                <Grid item xs={12} md={1}></Grid>
-                <Grid item xs={12} md={10}>
-                    <div style={{ alignItems: 'center' }}>
-                        {gender != '' && (
-                            <Iframe
-                                url={renderUrl()}
-                                width="100%"
-                                height="1000px"
-                            ></Iframe>
-                        )}
-                    </div>
+                <Grid container spacing={3} style={{ alignItems: 'center' }}>
+                    <Grid item xs={12} md={1}></Grid>
+                    <Grid item xs={12} md={10}>
+                        <div style={{ alignItems: 'center' }}>
+                            {gender != '' && (
+                                <Iframe
+                                    url={renderUrl()}
+                                    width="100%"
+                                    height="1000px"
+                                ></Iframe>
+                            )}
+                        </div>
+                    </Grid>
+                    <Grid item xs={12} md={1}></Grid>
                 </Grid>
-                <Grid item xs={12} md={1}></Grid>
-            </Grid>
-        </sections>
+            </sections>
         </div>
     );
 }

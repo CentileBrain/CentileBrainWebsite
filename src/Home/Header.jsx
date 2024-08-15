@@ -71,17 +71,13 @@ class Header extends React.Component {
                 </Menu.Item>
                 <Menu.Item key="faq">
                     <a>
-                        <span>FAQ
-
-                        </span>
+                        <span>FAQ</span>
                     </a>
                     <Link to="faq" />
                 </Menu.Item>
                 <Menu.Item key="eHarmonize">
                     <a>
-                        <span>eHarmonize
-
-                        </span>
+                        <span>eHarmonize</span>
                     </a>
                     <Link to="eHarmonize" />
                 </Menu.Item>
@@ -123,7 +119,20 @@ class Header extends React.Component {
                 )}
                 {menuMode === 'inline' && showMobileMenu && menu}
                 <Row>
-                    <Col xxl={20} xl={20} lg={20} md={16} sm={0} xs={0}  offset={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Col
+                        xxl={20}
+                        xl={20}
+                        lg={20}
+                        md={16}
+                        sm={0}
+                        xs={0}
+                        offset={2}
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
+                    >
                         <div className="header-meta">
                             {menuMode === 'horizontal' ? (
                                 <div id="menu">{menu}</div>

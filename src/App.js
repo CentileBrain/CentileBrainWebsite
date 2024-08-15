@@ -15,7 +15,7 @@ import TutorialPage3 from './Tutorial/TutorialPage3';
 import Home from './Home';
 import BrainAgeModelPage from './BrainAge/BrainAgeModel';
 import BrainAgeModel2Page from './BrainAge/BrainAgeModel2';
-import BrainAgeModel3Page from './BrainAge/BrainAgeModel3'; 
+import BrainAgeModel3Page from './BrainAge/BrainAgeModel3';
 import TutorialPage4 from './Tutorial/TutorialPage4';
 import FaqPage from './Faq/FaqPage';
 import ScrollToTop from './ScrollToTop';
@@ -71,12 +71,12 @@ function App() {
                     <Route path="/brainAGE">
                         <BrainAgeModelPage />
                     </Route>
-                    
+
                     <Route path="/brainAGE2">
-                        <BrainAgeModel2Page/>
+                        <BrainAgeModel2Page />
                     </Route>
                     <Route path="/brainAGE3">
-                        <BrainAgeModel3Page/>
+                        <BrainAgeModel3Page />
                     </Route>
 
                     <Route path="/faq">
@@ -85,7 +85,8 @@ function App() {
                     <Route
                         path="/eHarmonize"
                         component={() => {
-                            window.location.href = 'https://github.com/ahzhu/eharmonize';
+                            window.location.href =
+                                'https://github.com/ahzhu/eharmonize';
                             return null;
                         }}
                     />

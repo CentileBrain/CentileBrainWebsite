@@ -13,22 +13,19 @@ export default function PublicationsPage(props) {
 
     let publications = [
         {
-            info:
-                'Frangou S, Modabbernia A, Williams SCR, et al. Cortical thickness across the lifespan: Data from 17,075 \
+            info: 'Frangou S, Modabbernia A, Williams SCR, et al. Cortical thickness across the lifespan: Data from 17,075 \
             healthy individuals aged 3-90 years. Hum Brain Mapp. 2021;10.1002/hbm.25364. doi:10.1002/hbm.25364',
             link: 'https://pubmed.ncbi.nlm.nih.gov/33595143/',
             id: uuid(),
         },
         {
-            info:
-                'Dima D, Modabbernia A, Papachristou E, et al. Subcortical volumes across the lifespan: Data from 18,605 \
+            info: 'Dima D, Modabbernia A, Papachristou E, et al. Subcortical volumes across the lifespan: Data from 18,605 \
             healthy individuals aged 3-90 years. Hum Brain Mapp. 2021;10.1002/hbm.25320. doi:10.1002/hbm.25320',
             link: 'https://pubmed.ncbi.nlm.nih.gov/33570244/',
             id: uuid(),
         },
         {
-            info:
-                'Wierenga LM, Doucet GE, Dima D, et al. Greater male than female variability in regional brain structure across \
+            info: 'Wierenga LM, Doucet GE, Dima D, et al. Greater male than female variability in regional brain structure across \
             the lifespan [published online ahead of print, 2020 Oct 12]. Hum Brain Mapp. 2020;10.1002/hbm.25204. doi:10.1002/hbm.25204',
             link: 'https://pubmed.ncbi.nlm.nih.gov/33044802/',
             id: uuid(),
@@ -69,12 +66,12 @@ export default function PublicationsPage(props) {
             id: uuid(),
         },
         {
-            info: 
-                "Alyssa H. Zhu, etc, Paul M. Thompson, Neda Jahanshad, Alzheimer’s Disease Neuroimaging Initiative.  " +
-                 'Lifespan reference curves for harmonizing multi-site regional brain white matter metrics from diffusion MRI. 2024; doi: 10.1101/2024.02.22.581646',
-            link: 'https://www.biorxiv.org/content/10.1101/2024.02.22.581646', 
+            info:
+                'Alyssa H. Zhu, etc, Paul M. Thompson, Neda Jahanshad, Alzheimer’s Disease Neuroimaging Initiative.  ' +
+                'Lifespan reference curves for harmonizing multi-site regional brain white matter metrics from diffusion MRI. 2024; doi: 10.1101/2024.02.22.581646',
+            link: 'https://www.biorxiv.org/content/10.1101/2024.02.22.581646',
             id: uuid(),
-        }
+        },
     ];
 
     return (

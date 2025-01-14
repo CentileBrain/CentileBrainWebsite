@@ -61,11 +61,11 @@ export default function BrainAgeModel3Page(props) {
     return (
         <div>
             <style>
-                {`
+            {`
               .custom-nav {
                 position: relative;
                 margin: 50px auto 0;
-                width: 999px;
+                width: 1200px;
                 height: 50px;
                 background: #fafafa !important;
                 border-radius: 8px !important;
@@ -80,7 +80,7 @@ export default function BrainAgeModel3Page(props) {
                 position: relative;
                 z-index: 1;
                 display: inline-block;
-                width: 333px !important;
+                width: 400px !important;
                 text-align: center !important;
               }
     
@@ -105,33 +105,33 @@ export default function BrainAgeModel3Page(props) {
     
               .custom-nav .start-option1,
               .custom-nav a:nth-child(1):hover ~ .animation {
-                width: 333px !important;
+                width: 400px !important;
                 left: 0px !important;
               }
     
               .custom-nav .start-option2,
               .custom-nav a:nth-child(2):hover ~ .animation {
-                width: 333px !important;
-                left: 333px !important;
+                width: 400px !important;
+                left: 400px !important;
               }
     
               .custom-nav .start-option3,
               .custom-nav a:nth-child(3):hover ~ .animation {
-                width: 333px !important;
-                left: 666px !important;
+                width: 400px !important;
+                left: 800px !important;
               }
             `}
             </style>
             <sections>
                 <Header></Header>
                 <nav className="custom-nav">
-                    <Link to="/brainAge">
-                        <span>Generate Developmental BrainAGE for your sample</span>
+                    <Link to="/brainAge_developmental">
+                        <span>Generate Developmental Global-BrainAGE for your sample</span>
                     </Link>
-                    <Link to="/brainAge2">
-                        <span>Generate BrainAGE for your sample</span>
+                    <Link to="/brainAge_global">
+                        <span>Generate Global-BrainAGE for your sample</span>
                     </Link>
-                    <Link to="/brainAge3">
+                    <Link to="/brainAge_network">
                         <span>Generate Network-BrainAGE for your sample</span>
                     </Link>
                     <div className="animation start-option3"></div>

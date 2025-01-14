@@ -68,14 +68,14 @@ function App() {
                     <Route path="/privacy">
                         <Privacy />
                     </Route>
-                    <Route path="/brainAGE">
+                    <Route path="/brainAge_developmental">
                         <BrainAgeModelPage />
                     </Route>
 
-                    <Route path="/brainAGE2">
+                    <Route path="/brainAge_global">
                         <BrainAgeModel2Page />
                     </Route>
-                    <Route path="/brainAGE3">
+                    <Route path="/brainAge_network">
                         <BrainAgeModel3Page />
                     </Route>
 

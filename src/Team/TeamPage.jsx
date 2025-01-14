@@ -16,9 +16,7 @@ export default function TeamPage(props) {
                 <div className="team-title">
                     <h1>Our Team</h1>
                 </div>
-
-                <div style={{ paddingRight: '3rem', paddingLeft: '3rem' }}>
-                    <div className="container-fluid d-flex justify-content-center">
+                <div className="container-fluid d-flex justify-content-center">
                         <div className="row">
                             <div className="col-md-4">
                                 <Link
@@ -68,6 +66,10 @@ export default function TeamPage(props) {
                         </div>
                     </div>
 
+                <div style={{ paddingRight: '3rem', paddingLeft: '3rem' }}>
+
+
+ 
                     <div className="container-fluid d-flex justify-content-center">
                         <div className="row">
                             <div className="col-md-4">
@@ -82,6 +84,22 @@ export default function TeamPage(props) {
                                         }
                                         name={'Dr. Shalaila Haas'}
                                         title={'Neuroscientist'}
+                                    />
+                                </Link>
+                            </div>
+                            
+                            <div className="col-md-4">
+                                <Link
+                                    to={{ pathname: `/yuetong` }}
+                                    style={{ textDecoration: `none` }}
+                                    target="_blank"
+                                >
+                                    <Card
+                                        imgsrc={
+                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/yuetong.jpg'
+                                        }
+                                        name={'Yuetong Yu'}
+                                        title={'Data Scientist'}
                                     />
                                 </Link>
                             </div>
@@ -100,23 +118,8 @@ export default function TeamPage(props) {
                                     />
                                 </Link>
                             </div>
-                            <div className="col-md-4">
-                                <Link
-                                    to={{ pathname: `/yuetong` }}
-                                    style={{ textDecoration: `none` }}
-                                    target="_blank"
-                                >
-                                    <Card
-                                        imgsrc={
-                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/yuetong.jpg'
-                                        }
-                                        name={'Yuetong Yu'}
-                                        title={'Data Scientist'}
-                                    />
-                                </Link>
-                            </div>
                         </div>
-                    </div>
+                    </div> 
 
                     <div className="container-fluid d-flex justify-content-center">
                         <div className="row">
@@ -201,8 +204,12 @@ export default function TeamPage(props) {
                                 </Link>
                             </div>
                             <div className="col-md-4">
-                                <Card style={{ display: 'none' }} />
+                                
+                            <Card style={{ display: 'none' }} />
                             </div>
+                            {/* <div className="col-md-4">
+                                <Card style={{ display: 'none' }} />
+                            </div> */}
                         </div>
                     </div>
                 </div>

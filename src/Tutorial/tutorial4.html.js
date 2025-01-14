@@ -164,7 +164,7 @@ library(kernlab)</code></pre>
 <h3>2. Training Data Preparation</h3>
 <div id="import-training-data" class="section level4">
 <h4>2.1 Import training data</h4>
-<p>First, you should run Freesurfer on T1-weighted images followed by <a href="https://raw.githubusercontent.com/AmirhosseinModabbernia/DevelopmentalBrainAge/main/Script_For_Yeo_Parcellation">Schaefe-400 parcellation scheme</a> to extract cortical thickness and surface area of 400 regions, and then organize the data file using the <a href="https://docs.google.com/spreadsheets/d/1LrZ-cTCjlW5yyzvoSAq0GrrbpDrsOZgC/edit?usp=sharing&amp;ouid=113421968822305120096&amp;rtpof=true&amp;sd=true">template</a> provided.</p>
+<p>First, you should run Freesurfer on T1-weighted images followed by <a href="https://github.com/CentileBrain/centilebrain/blob/main/instructions/Schaefer_parcellation_extraction_Developmental-BrainAge.sh.sh">Schaefer-400 parcellation scheme</a> to extract cortical thickness and surface area of 400 regions, and then organize the data file using the <a href="https://docs.google.com/spreadsheets/d/1nBEE_AnWpN7ze93y_WV7IKGNUYKR2i-4/edit?gid=1848377784#gid=1848377784">template</a> provided.</p>
 <p>Please note: (a) the script will not run correctly unless the data is organized according to the template provided; (b) the script cannot #handle missing values for any regional morphometric measure, and participants with missing values should be removed.</p>
 <pre class="r"><code>x &lt;- read.csv(&quot;.../template_train.csv&quot;)</code></pre>
 <p>Split the sample into males and females.</p>

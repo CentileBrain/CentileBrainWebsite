@@ -41,12 +41,12 @@ function Footer() {
                                         </Link>
                                     </Row>
                                     <Row style={rowStyle}>
-                                        <Link to="/brainAGE" style={linkStyle}>
+                                        <Link to="/brainAge_developmental" style={linkStyle}>
                                             Global BrainAGE
                                         </Link>
                                     </Row>
                                     <Row style={rowStyle}>
-                                        <Link to="/brainAGE3" style={linkStyle}>
+                                        <Link to="/brainAge_network" style={linkStyle}>
                                             Network BrainAGE
                                         </Link>
                                     </Row>

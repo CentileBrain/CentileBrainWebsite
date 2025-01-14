@@ -19,14 +19,14 @@ const featuresCN = [
         shadowColor: 'rgba(19,194,194,.12)',
     },
     {
-        title: 'Use CentileBrain to Generate Estimates',
+        title: 'CentileBrain Normative Morphology Models',
         src: 'https://raw.githubusercontent.com/yixuanQicq/BrainProject/50add014ad94a08a6412abce038c75e098482865/src/Home/data/iStock-1251018502%20Upload.svg',
         color: '#2F54EB',
         link: '/model',
         shadowColor: 'rgba(47,84,235,.12)',
     },
     {
-        title: 'The CentileBrain Model',
+        title: 'CentileBrain Normative Model Scripts',
         src: 'https://raw.githubusercontent.com/yixuanQicq/BrainProject/50add014ad94a08a6412abce038c75e098482865/src/Home/data/iStock-1155106799_Model.svg',
         color: '#F5222D',
         link: '/model2',

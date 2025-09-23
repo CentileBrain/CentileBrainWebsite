@@ -105,24 +105,40 @@ export default function TeamPage(props) {
                             </div>
                             <div className="col-md-4">
                                 <Link
-                                    to={{ pathname: `/amirhossein` }}
+                                    to={{ pathname: `/kdu` }}
                                     style={{ textDecoration: `none` }}
                                     target="_blank"
                                 >
                                     <Card
                                         imgsrc={
-                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/Amirhossein.jpeg'
+                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/DU_Kevin.jpg'
                                         }
-                                        name={'Dr. Amirhossein Modabbernia'}
-                                        title={'Clinical Neuroscientist'}
+                                        name={'Kevin Du'}
+                                        title={'Data Scientist'}
                                     />
                                 </Link>
                             </div>
                         </div>
                     </div> 
 
+                    
                     <div className="container-fluid d-flex justify-content-center">
                         <div className="row">
+                            <div className="col-md-4">
+                                <Link
+                                    to={{ pathname: `/ali` }}
+                                    style={{ textDecoration: `none` }}
+                                    target="_blank"
+                                >
+                                    <Card
+                                        imgsrc={
+                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/LI_Andrew.jpg'
+                                        }
+                                        name={'Andrew Li'}
+                                        title={'Data Scientist'}
+                                    />
+                                </Link>
+                            </div>
                             <div className="col-md-4">
                                 <Link
                                     to={{ pathname: `/yixuan` }}
@@ -135,21 +151,6 @@ export default function TeamPage(props) {
                                         }
                                         name={'Yi Xuan Qi'}
                                         title={'Computer Scientist'}
-                                    />
-                                </Link>
-                            </div>
-                            <div className="col-md-4">
-                                <Link
-                                    to={{ pathname: `/vera` }}
-                                    style={{ textDecoration: `none` }}
-                                    target="_blank"
-                                >
-                                    <Card
-                                        imgsrc={
-                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/vera.jpg'
-                                        }
-                                        name={'Vera Fan'}
-                                        title={'Data Scientist '}
                                     />
                                 </Link>
                             </div>
@@ -170,7 +171,6 @@ export default function TeamPage(props) {
                             </div>
                         </div>
                     </div>
-
                     <div className="container-fluid d-flex justify-content-center">
                         <div className="row">
                             <div className="col-md-4">
@@ -204,16 +204,43 @@ export default function TeamPage(props) {
                                 </Link>
                             </div>
                             <div className="col-md-4">
-                                
-                            <Card style={{ display: 'none' }} />
+                                <Link
+                                    to={{ pathname: `/vera` }}
+                                    style={{ textDecoration: `none` }}
+                                    target="_blank"
+                                >
+                                    <Card
+                                        imgsrc={
+                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/vera.jpg'
+                                        }
+                                        name={'Vera Fan'}
+                                        title={'Data Scientist '}
+                                    />
+                                </Link>
                             </div>
-                            {/* <div className="col-md-4">
-                                <Card style={{ display: 'none' }} />
-                            </div> */}
+                        </div>
+                    </div>
+                    <div className="container-fluid d-flex justify-content-center">
+                        <div className="row">
+                                <div className="col-md-4">
+                                <Link
+                                    to={{ pathname: `/amirhossein` }}
+                                    style={{ textDecoration: `none` }}
+                                    target="_blank"
+                                >
+                                    <Card
+                                        imgsrc={
+                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/Amirhossein.jpeg'
+                                        }
+                                        name={'Dr. Amirhossein Modabbernia'}
+                                        title={'Clinical Neuroscientist'}
+                                    />
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> 
     );
 }

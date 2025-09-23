@@ -1,0 +1,23 @@
+/* ---- FADE ---- */
+
+/* This is the starting state of the new screen */
+.fade-enter {
+    opacity: 0;
+}
+
+/* This is the state the new screen animates to */
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 800ms ease-in; /* Must match timeout in CSSTransition */
+}
+
+/* This is the starting state of the screen that is leaving */
+.fade-exit {
+    opacity: 1;
+}
+
+/* This is the state the old screen animates to */
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in; /* Must match timeout in CSSTransition */
+}

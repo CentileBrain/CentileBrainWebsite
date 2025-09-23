@@ -141,21 +141,6 @@ export default function TeamPage(props) {
                             </div>
                             <div className="col-md-4">
                                 <Link
-                                    to={{ pathname: `/yixuan` }}
-                                    style={{ textDecoration: `none` }}
-                                    target="_blank"
-                                >
-                                    <Card
-                                        imgsrc={
-                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/yixuan.jpg'
-                                        }
-                                        name={'Yi Xuan Qi'}
-                                        title={'Computer Scientist'}
-                                    />
-                                </Link>
-                            </div>
-                            <div className="col-md-4">
-                                <Link
                                     to={{ pathname: `/faye` }}
                                     style={{ textDecoration: `none` }}
                                     target="_blank"
@@ -166,6 +151,21 @@ export default function TeamPage(props) {
                                         }
                                         name={'Faye New'}
                                         title={'Cognitive Neuroscientist '}
+                                    />
+                                </Link>
+                            </div>
+                            <div className="col-md-4">
+                                <Link
+                                    to={{ pathname: `/yixuan` }}
+                                    style={{ textDecoration: `none` }}
+                                    target="_blank"
+                                >
+                                    <Card
+                                        imgsrc={
+                                            'https://centilebrainwebsiteimage.s3.amazonaws.com/yixuan.jpg'
+                                        }
+                                        name={'Yi Xuan Qi'}
+                                        title={'Computer Scientist'}
                                     />
                                 </Link>
                             </div>

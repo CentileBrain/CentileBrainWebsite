@@ -6,6 +6,8 @@ ghPages.publish(
     {
         depth: 1,
         cname: 'centilebrain.org',
+        add: true,
+        dotfiles: true,
         logger: function (message) {
             console.log(message);
         },

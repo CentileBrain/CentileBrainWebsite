@@ -4,6 +4,7 @@ ghPages.publish(
     path.join(process.cwd(), 'dist'),
     {
         depth: 1,
+        cname: 'centilebrain.org',
         logger: function (message) {
             console.log(message);
         },

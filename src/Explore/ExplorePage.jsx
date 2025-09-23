@@ -32,7 +32,7 @@ export default function ExplorePage(props) {
                 </Grid>
                 <Grid item xs={12} md={5}>
                     <img
-                        src="https://centilebrainwebsiteimage.s3.us-east-1.amazonaws.com/CentileBrain_Map_2025%3A09%3A22.jpg"
+                        src="https://centilebrainwebsiteimage.s3.amazonaws.com/CentileBrain_Map_2025%3A09%3A22.jpg"
                         width="100%"
                     />
                 </Grid>

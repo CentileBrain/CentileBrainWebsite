@@ -1,6 +1,6 @@
 {
     "homepage": "https://CentileBrain.github.io/CentileBrainWebsite",
-    
+
     "dependencies": {
         "@material-ui/core": "^4.11.4",
         "@material-ui/icons": "^4.11.2",
@@ -72,7 +72,7 @@
     ],
     "private": true,
     "scripts": {
-        "build": "atool-build && cp index.html dist",
+        "build": "atool-build && cp index.html dist && cp CNAME dist",
         "check": "npm run prettier-check && npm run eslint-check",
         "deploy": "rm -rf dist && npm run build && node ./deploy.js",
         "eslint-check": "eslint --no-error-on-unmatched-pattern \"src/**/*.{js,jsx}\"",

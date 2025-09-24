@@ -10,3 +10,51 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+/***********************Page Transitions************************/
+
+.fade-enter,
+.fade-exit {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(10px); /* slight lift */
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px); /* slight upward exit */
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.transition-group {
+  position: relative;
+  min-height: 100vh; /* ensure consistent page height */
+}
+
+/***********************Hover************************/
+
+.enlarge-hover {
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;  /* controls speed & smoothness */
+}
+
+.enlarge-hover:hover {
+  transform: scale(1.01); /* 1.0 = normal size, 1.1 = 10% bigger */
+}

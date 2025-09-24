@@ -81,12 +81,12 @@ class Header extends React.Component {
                     </a>
                     <Link to="eHarmonize" />
                 </Menu.Item>
-                <Menu.Item key="tutorial">
+                {/* <Menu.Item key="tutorial">
                     <a>
                         <span>Tutorial</span>
                     </a>
                     <Link to="/tutorial" />
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item key="publications">
                     <a>
                         <span>Publications</span>

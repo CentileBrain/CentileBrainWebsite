@@ -2,17 +2,19 @@ body {
     background: radial-gradient(#e5e5e5, #ffff, #e5e5e5);
 }
 
-
 .card {
     width: 20rem;
+    overflow: hidden; /* prevents scaled image from overflowing */
+    transition: box-shadow 0.5s ease; /* smooth shadow transition */
 }
 
 .card:hover {
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+    transition: transform 0.5s ease;
 }
 
 .card-body {
-    padding: 3rem 0 !important;
+    padding: 1.5rem 0 !important; /* less padding so card stays neat */
 }
 
 .card-text {
@@ -22,4 +24,11 @@ body {
 
 .container-fluid .row {
     padding-top: 6rem;
+}
+
+.card-img-top.enlarge-hover {
+    transition: transform 0.5s ease-in-out;
+}
+.card-img-top.enlarge-hover:hover {
+    transform: scale(1.01);
 }

@@ -25,6 +25,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/sophia.jpg'
                                         }
@@ -40,6 +41,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/Paull.png'
                                         }
@@ -55,6 +57,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/ruiyang2.jpg'
                                         }
@@ -79,6 +82,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/Shalaila.jpg'
                                         }
@@ -95,6 +99,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/yuetong.jpg'
                                         }
@@ -110,6 +115,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/DU_Kevin.jpg'
                                         }
@@ -131,6 +137,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/LI_Andrew.jpg'
                                         }
@@ -146,6 +153,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/Faye.jpg'
                                         }
@@ -161,6 +169,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/yixuan.jpg'
                                         }
@@ -180,6 +189,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/chuntong.jpg'
                                         }
@@ -195,6 +205,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/shiyu.jpg'
                                         }
@@ -210,6 +221,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/vera.jpg'
                                         }
@@ -229,6 +241,7 @@ export default function TeamPage(props) {
                                     target="_blank"
                                 >
                                     <Card
+                                        className="enlarge-hover"
                                         imgsrc={
                                             'https://centilebrainwebsiteimage.s3.amazonaws.com/Amirhossein.jpeg'
                                         }

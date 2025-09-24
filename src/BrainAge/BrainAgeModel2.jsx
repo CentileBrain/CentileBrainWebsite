@@ -57,7 +57,7 @@ export default function BrainAgeModel2Page(props) {
     return (
         <div>
             <style>
-            {`
+                {`
               .custom-nav {
                 position: relative;
                 margin: 50px auto 0;
@@ -122,7 +122,9 @@ export default function BrainAgeModel2Page(props) {
                 <Header></Header>
                 <nav className="custom-nav">
                     <Link to="/brainAge_developmental">
-                        <span>Generate Developmental Global-BrainAGE for your sample</span>
+                        <span>
+                            Generate Developmental Global-BrainAGE for your sample
+                        </span>
                     </Link>
                     <Link to="/brainAge_global">
                         <span>Generate Global-BrainAGE for your sample</span>

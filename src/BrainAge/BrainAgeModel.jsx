@@ -96,7 +96,9 @@ export default function BrainAgeModelPage(props) {
                 <Header></Header>
                 <nav className="custom-nav">
                     <Link to="/brainAge_developmental">
-                        <span>Generate Developmental Global-BrainAGE for your sample</span>
+                        <span>
+                            Generate Developmental Global-BrainAGE for your sample
+                        </span>
                     </Link>
                     <Link to="/brainAge_global">
                         <span>Generate Global-BrainAGE for your sample</span>

@@ -1,7 +1,7 @@
 /*eslint-disable */
 import React from 'react';
 import { HashRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';   
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import ContactPage from './Contact/ContactPage';
 import Privacy from './Contact/PrivacyPage';
 import ExplorePage from './Explore/ExplorePage';
@@ -21,16 +21,11 @@ import TutorialPage4 from './Tutorial/TutorialPage4';
 import FaqPage from './Faq/FaqPage';
 import ScrollToTop from './ScrollToTop';
 
-
 function AnimatedRoutes() {
     const location = useLocation();
     return (
         <TransitionGroup>
-            <CSSTransition
-                key={location.pathname}
-                classNames="fade"
-                timeout={300}
-            >
+            <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
                 <Switch location={location}>
                     <Route exact path="/">
                         <Home />
@@ -190,7 +185,7 @@ function AnimatedRoutes() {
                             return null;
                         }}
                     />
-                    <Route 
+                    <Route
                         path="/kdu"
                         component={() => {
                             window.location.href =
@@ -198,7 +193,7 @@ function AnimatedRoutes() {
                             return null;
                         }}
                     />
-                    <Route 
+                    <Route
                         path="/ali"
                         component={() => {
                             window.location.href =
@@ -211,7 +206,6 @@ function AnimatedRoutes() {
         </TransitionGroup>
     );
 }
-
 
 function App() {
     return (

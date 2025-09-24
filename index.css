@@ -10,30 +10,72 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-/* ---- FADE ---- */
 
-/* This is the starting state of the new screen */
+/***********************Page Transitions************************/
+
+.fade-enter,
+.fade-exit {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
 .fade-enter {
     opacity: 0;
+    -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+            transform: translateY(10px); /* slight lift */
 }
 
-/* This is the state the new screen animates to */
 .fade-enter-active {
     opacity: 1;
-    -webkit-transition: opacity 800ms ease-in;
-    transition: opacity 800ms ease-in; /* Must match timeout in CSSTransition */
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: opacity 400ms ease, -webkit-transform 400ms ease;
+    transition: opacity 400ms ease, -webkit-transform 400ms ease;
+    transition: opacity 400ms ease, transform 400ms ease;
+    transition: opacity 400ms ease, transform 400ms ease, -webkit-transform 400ms ease;
 }
 
-/* This is the starting state of the screen that is leaving */
 .fade-exit {
     opacity: 1;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
 }
 
-/* This is the state the old screen animates to */
 .fade-exit-active {
     opacity: 0;
-    -webkit-transition: opacity 300ms ease-in;
-    transition: opacity 300ms ease-in; /* Must match timeout in CSSTransition */
+    -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+            transform: translateY(-10px); /* slight upward exit */
+    -webkit-transition: opacity 400ms ease, -webkit-transform 400ms ease;
+    transition: opacity 400ms ease, -webkit-transform 400ms ease;
+    transition: opacity 400ms ease, transform 400ms ease;
+    transition: opacity 400ms ease, transform 400ms ease, -webkit-transform 400ms ease;
+}
+
+.transition-group {
+    position: relative;
+    min-height: 100vh; /* ensure consistent page height */
+}
+
+/***********************Hover************************/
+
+.enlarge-hover {
+    display: inline-block;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out; /* controls speed & smoothness */
+}
+
+.enlarge-hover:hover {
+    -webkit-transform: scale(1.01);
+        -ms-transform: scale(1.01);
+            transform: scale(1.01); /* 1.0 = normal size, 1.1 = 10% bigger */
 }
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable declaration-bang-space-before */
@@ -20776,17 +20818,23 @@ body {
     background: radial-gradient(#e5e5e5, #ffff, #e5e5e5);
 }
 
-
 .card {
     width: 20rem;
+    overflow: hidden; /* prevents scaled image from overflowing */
+    -webkit-transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease; /* smooth shadow transition */
 }
 
 .card:hover {
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .card-body {
-    padding: 3rem 0 !important;
+    padding: 1.5rem 0 !important; /* less padding so card stays neat */
 }
 
 .card-text {
@@ -20796,6 +20844,18 @@ body {
 
 .container-fluid .row {
     padding-top: 6rem;
+}
+
+.card-img-top.enlarge-hover {
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+.card-img-top.enlarge-hover:hover {
+    -webkit-transform: scale(1.01);
+        -ms-transform: scale(1.01);
+            transform: scale(1.01);
 }
 .tutorialNav {
     position: relative;
@@ -21940,11 +22000,9 @@ footer .footer-flag {
     height: 648px;
   }
 }
-img:hover {
-    -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-            transform: scale(1.05);
-}
+/* img:hover {
+    transform: scale(1.05);
+} */
 nav {
     position: relative;
     margin: 50px auto 0;

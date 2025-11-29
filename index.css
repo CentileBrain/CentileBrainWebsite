@@ -22000,9 +22000,15 @@ footer .footer-flag {
     height: 648px;
   }
 }
-/* img:hover {
-    transform: scale(1.05);
-} */
+/* 
+.enlarge-hover {
+    display: inline-block;
+    transition: transform 0.5s ease-in-out; /* controls speed & smoothness
+}
+
+.enlarge-hover:hover {
+    transform: scale(1.01); /* 1.0 = normal size, 1.1 = 10% bigger 
+}*/
 nav {
     position: relative;
     margin: 50px auto 0;

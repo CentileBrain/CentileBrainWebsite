@@ -177,10 +177,10 @@ export default function BrainAgeModel3Page(props) {
                                         onChange={handleAgeChange}
                                     >
                                         <MenuItem value={'young'}>
-                                            1&le;age&lt;40 years
+                                            3&le;age&lt;40 years
                                         </MenuItem>
                                         <MenuItem value={'old'}>
-                                            40&le;age&lt;93 years
+                                            40&le;age&lt;92 years
                                         </MenuItem>
                                     </Select>
                                 </FormControl>
@@ -196,10 +196,10 @@ export default function BrainAgeModel3Page(props) {
                                         onChange={handleAgeChange}
                                     >
                                         <MenuItem value={'young'}>
-                                            1&le;age&lt;40 years
+                                            3&le;age&lt;40 years
                                         </MenuItem>
                                         <MenuItem value={'old'}>
-                                            40&le;age&lt;95 years
+                                            40&le;age&lt;92 years
                                         </MenuItem>
                                     </Select>
                                 </FormControl>

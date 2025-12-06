@@ -16,13 +16,9 @@ class Header extends React.Component {
 
     componentDidMount() {
         enquire.register('screen and (max-width:1200px)', {
-            // If supplied, triggered when a media query matches.
             match: () => {
                 this.setState({ menuMode: 'inline' });
             },
-
-            // If supplied, triggered when the media query transitions
-            // *from a matched state to an unmatched state*.
             unmatch: () => {
                 this.setState({ menuMode: 'horizontal' });
             },
@@ -81,18 +77,12 @@ class Header extends React.Component {
                     </a>
                     <Link to="eHarmonize" />
                 </Menu.Item>
-                {/* <Menu.Item key="tutorial">
-                    <a>
-                        <span>Tutorial</span>
-                    </a>
-                    <Link to="/tutorial" />
-                </Menu.Item> */}
-                <Menu.Item key="publications">
+                {/* <Menu.Item key="publications">
                     <a>
                         <span>Publications</span>
                     </a>
                     <Link to="/publications" />
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item key="team">
                     <a>
                         <span>Core Team</span>

@@ -77,12 +77,12 @@ class Header extends React.Component {
                     </a>
                     <Link to="eHarmonize" />
                 </Menu.Item>
-                {/* <Menu.Item key="publications">
+                <Menu.Item key="publications">
                     <a>
                         <span>Publications</span>
                     </a>
                     <Link to="/publications" />
-                </Menu.Item> */}
+                </Menu.Item>
                 <Menu.Item key="team">
                     <a>
                         <span>Core Team</span>
@@ -110,13 +110,13 @@ class Header extends React.Component {
                 {menuMode === 'inline' && showMobileMenu && menu}
                 <Row>
                     <Col
-                        xxl={20}
-                        xl={20}
-                        lg={20}
-                        md={16}
+                        xxl={24}  
+                        xl={24}   
+                        lg={24}   
+                        md={24}   
                         sm={0}
                         xs={0}
-                        offset={2}
+                        offset={0} 
                         style={{
                             display: 'flex',
                             justifyContent: 'center',

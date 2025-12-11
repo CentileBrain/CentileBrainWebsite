@@ -1,6 +1,54 @@
-.FaqGrid {
-    position: relative;
-    margin: 50px auto 0;
-    width: 800px;
-    height: 50px;
+@import '../Explore/explore.css';
+
+.MuiAccordion-root {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 0 !important;
+}
+
+.MuiAccordion-root:before {
+    display: none !important; 
+}
+
+.MuiAccordion-root:last-child {
+    border-bottom: none;
+}
+
+.MuiAccordionSummary-root {
+    padding: 0 24px !important;
+    min-height: 72px !important;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.MuiAccordionSummary-root:hover {
+    background-color: rgba(0, 21, 41, 0.03);
+}
+
+.MuiAccordionSummary-content {
+    margin: 20px 0 !important;
+}
+
+/* The Expand Icon */
+.MuiAccordionSummary-expandIcon {
+    color: #659bdf !important; 
+}
+
+/* The Answer Body */
+.MuiAccordionDetails-root {
+    padding: 8px 24px 32px 24px !important;
+}
+
+/* Typography Overrides for this specific page */
+.faq-question-text {
+    font-weight: 600;
+    color: #001529;
+    font-size: 1.05rem;
+}
+
+.faq-answer-text {
+    color: #595959;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }

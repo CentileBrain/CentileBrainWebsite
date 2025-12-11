@@ -1,35 +1,46 @@
 import './FaqPage.css';
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import React, { useState, useEffect } from 'react';
 import Header from '../Home/Header';
-import { Link } from 'react-router-dom';
+
+// Material UI Imports
+import {
+    ThemeProvider,
+    createTheme,
+    Grid,
+    Accordion,
+    AccordionSummary,
+    AccordionDetails,
+    Typography,
+    Box
+} from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+// 1. Define the Premium Theme (Matching ExplorePage2)
+const premiumTheme = createTheme({
+    palette: { primary: { main: '#001529' }, text: { primary: '#262626' } },
+    shape: { borderRadius: 16 },
+    typography: {
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    }
+});
 
 export default function FaqPage(props) {
-    // return a list of questions and answers, grey background for questions
-    // white background for answers
+    // State to handle the "fade in" effect
+    const [ready, setReady] = useState(false);
+    
+    // State to manage which accordion is expanded (optional: keeps one open at a time if desired, currently allows multiple)
+    const [expanded, setExpanded] = useState(false);
 
-    const useStyles = makeStyles(theme => ({
-        root: {
-            flexGrow: 1,
-        },
-        question: {
-            backgroundColor: '#f0f0f0',
-            padding: theme.spacing(2),
-            textAlign: 'left',
-            fontSize: '1.2rem',
-        },
-        answer: {
-            backgroundColor: 'white',
-            padding: theme.spacing(2),
-            textAlign: 'left',
-            fontSize: '1rem',
-        },
-    }));
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
 
-    const classes = useStyles();
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setReady(true);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
 
     const questions = [
         'Who created and maintains the CentileBrain platform?',
@@ -62,58 +73,67 @@ export default function FaqPage(props) {
         "The output of the CentileBrain normative modeling module (https://centilebrain.org/#/model) is a compressed file containing six spreadsheets:<br /><br />  1. Z-score file<br />    Name: zscore_[variable name]_[sex].csv<br />    Explanation: Deviation scores for each region of each participant, representing the distance between an individual's regional morphometric feature and the normative mean derived from healthy individuals.<br /><br />  2. Prediction file<br />    Name: prediction_[variable name]_[sex].csv<br />    Explanation: Predicted values for each participant generated using pre-trained CentileBrain models.<br /><br />  3.Centile value file<br />    Name: centile_[variable name]_[sex].xlsx<br />    Explanation: Centile values (ranging from 0.04% to 99.6%) corresponding to specific ages in the normative data.<br /><br />  4.Mean Absolute Error (MAE) file<br />    Name: MAE_[variable name]_[sex].csv<br />    Explanation: Mean absolute error values for each brain region. Lower MAE values indicate greater accuracy.<br /><br />  5. Root Mean Squared Error (RMSE) file<br />    Name: RMSE_[variable name]_[sex].csv<br />    Explanation: Root mean squared error values for each brain region. Lower RMSE values signify higher accuracy.<br /><br />  6. Correlation Coefficient (CORR) file<br />    Name: CORR_[variable name]_[sex].csv<br />    Explanation: Correlation coefficients between predicted and observed morphometric measures for each brain region. Higher CORR values typically indicate greater accuracy.",
         'Clearly distinguish the scanners or vendors in the "SITE" column of the provided spreadsheet templates. This will enable the online calculation tool to account for and remove the scanner effect.',
         'The CentileBrain platform handles site effects differently for different models. <br />BrainAGE models (global or network-based) do not use site correction as per our paper by Yu et al., 2024 (PMID: 38949537).<br /> All normative brain models use CombatGAM for site correction as per our paper by Ge et al., 2024 (PMID: 38395541).',
-        'While the CentileBrain platform can apply CombatGAM to your dataset, this process may slow down computations and potentially cause time-outs. We recommend pre-processing your dataset with CombatGAM outside of CentileBrain platform using <a href="https://github.com/CentileBrain/centilebrain/tree/main/Python_R_codes/combatGAM_script" target="_blank"><b>customized script</b></a>. Afterwards, you can upload the harmonized data of your entire sample (regardless of size). When using already harmonized data, please enter the character “A” for all entries in the “SITE” column on the spreadsheet so that the CentileBrain algorithm skips the harmonization step. ',
+        'While the CentileBrain platform can apply CombatGAM to your dataset, this process may slow down computations and potentially cause time-outs. We recommend pre-processing your dataset with CombatGAM outside of CentileBrain platform using <a href="https://github.com/CentileBrain/centilebrain/tree/main/Python_R_codes/combatGAM_script" target="_blank" style="color:#1890ff;text-decoration:none;"><b>customized script</b></a>. Afterwards, you can upload the harmonized data of your entire sample (regardless of size). When using already harmonized data, please enter the character “A” for all entries in the “SITE” column on the spreadsheet so that the CentileBrain algorithm skips the harmonization step. ',
         'The normative models in CentileBrain cannot process multisite data if any site contributes fewer than 5 participants. In such cases, please either assign these participants to the site with the largest sample (preferred) or upload the data from each site with such small samples separately.',
-        'Yes, but we do not recommend using them, as they are less accurate than the models we provide on the main Centilebrain web platform. However, if you would like to explore these models, you can find them <a href="https://github.com/CentileBrain/centilebrain/tree/main/models_without_globalMeasures" target="_blank"><b>here</b></a>.'
+        'Yes, but we do not recommend using them, as they are less accurate than the models we provide on the main Centilebrain web platform. However, if you would like to explore these models, you can find them <a href="https://github.com/CentileBrain/centilebrain/tree/main/models_without_globalMeasures" target="_blank" style="color:#1890ff;text-decoration:none;"><b>here</b></a>.'
     ];
 
     return (
-        <div className={classes.root}>
-            <Header />
+        <ThemeProvider theme={premiumTheme}>
+            {/* 1. Global Wrapper (.explore-root) */}
+            <div className="explore-root">
+                <Header />
 
-            <Grid
-                container
-                spacing={3}
-                style={{ width: '1000px', position: 'relative', margin: 'auto' }}
-            >
-                <Grid item xs={12} md={12}>
-                    <Grid
-                        container
-                        spacing={3}
-                        direction="row"
-                        justify="center"
-                        alignContent={'center'}
-                    >
-                        <Grid>
-                            <br />
-                            <h1 align="center">Frequently Asked Questions</h1>
-                            <br />
-                        </Grid>
+                {/* Loading state check to prevent flash of unstyled content */}
+                <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px 60px 24px' }}>
+                    
+                    {/* Title Section */}
+                    <div style={{ textAlign: 'center', marginTop: '40px', marginBottom: '40px' }} className={`page-fade-in ${ready ? '' : 'hidden'}`}>
+                        <Typography variant="h4" style={{ fontWeight: 700, color: '#001529' }}>
+                            Frequently Asked Questions
+                        </Typography>
+                        <Typography variant="body1" style={{ color: '#595959', marginTop: '10px' }}>
+                            Everything you need to know about the CentileBrain platform
+                        </Typography>
+                    </div>
+
+                    {/* FAQ Card Container */}
+                    <div className={`polished-card card-slide-up delay-100 ${ready ? '' : 'hidden'}`} style={{ padding: '20px 0' }}>
                         {questions.map((question, index) => (
-                            <Grid item xs={12} key={index}>
-                                <Box className={classes.question}>{question}</Box>
-                                <Box className={classes.answer}>
-                                    <span
-                                        className="text-sm"
-                                        dangerouslySetInnerHTML={{
-                                            __html: answers[index],
-                                        }}
-                                    />
-                                </Box>
-                            </Grid>
+                            <Accordion 
+                                key={index} 
+                                expanded={expanded === `panel${index}`} 
+                                onChange={handleChange(`panel${index}`)}
+                            >
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon fontSize="large" />}
+                                    aria-controls={`panel${index}bh-content`}
+                                    id={`panel${index}bh-header`}
+                                >
+                                    <Typography className="faq-question-text">
+                                        {question}
+                                    </Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <Box className="faq-answer-text">
+                                        <span
+                                            dangerouslySetInnerHTML={{
+                                                __html: answers[index],
+                                            }}
+                                        />
+                                    </Box>
+                                </AccordionDetails>
+                            </Accordion>
                         ))}
-                        <span
-                            style={{
-                                paddingTop: '1rem',
-                                paddingBottom: '1rem',
-                                color: 'grey',
-                            }}
-                        >
-                            Version: August 2024
-                        </span>
-                    </Grid>
-                </Grid>
-            </Grid>
-        </div>
+                    </div>
+
+                    {/* Footer / Version info */}
+                    <div className="card-slide-up delay-200" style={{ textAlign: 'center', marginTop: '30px', color: '#888', fontSize: '0.9rem' }}>
+                        Version: August 2024
+                    </div>
+
+                </div>
+            </div>
+        </ThemeProvider>
     );
 }

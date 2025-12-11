@@ -48,7 +48,7 @@
 }
 
 .explore-nav-link.active {
-    background: #001529;
+    background: #659bdf;
     color: white;
     box-shadow: 0 2px 10px rgba(0, 21, 41, 0.15);
 }
@@ -193,4 +193,10 @@
 }
 .delay-300 {
     animation-delay: 0.3s;
+}
+
+body .explore-nav .explore-nav-link {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    line-height: 44px !important;
 }

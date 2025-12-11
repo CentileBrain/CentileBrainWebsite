@@ -1,0 +1,17 @@
+/* Scope and neutralize legacy Bootstrap typography */
+.legacy-bootstrap {
+  /* no visual changes, just a scope wrapper */
+}
+
+/* Prevent the embedded HTML from redefining base font sizes */
+.legacy-bootstrap html,
+.legacy-bootstrap body {
+  font-size: inherit !important;
+}
+
+/* Prevent it from shrinking link/nav fonts */
+.legacy-bootstrap a,
+.legacy-bootstrap .nav li a {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}

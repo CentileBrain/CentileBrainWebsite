@@ -32,13 +32,11 @@ function Banner(props) {
                     border: none;
                 }
                 
-                /* When hovering, lift the button and INCREASE shadow */
                 .banner-btn:hover {
                     transform: translateY(-3px); 
                     box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important; 
                 }
 
-                /* Specific styles for the Ghost (Contact) button to keep white border */
                 .banner-btn-ghost {
                     border: 2px solid white !important;
                     color: white !important;
@@ -148,11 +146,29 @@ function Banner(props) {
                                     </Button>
                                 </Link>
                             </div>
-
                         </div>
                     </Col>
                 </Row>
             </div>
+
+            {/* LAYER 4: Tiny Vecteezy attribution */}
+            <a
+                href="https://www.vecteezy.com/free-videos/brain"
+                style={{
+                    position: 'absolute',
+                    bottom: '8px',
+                    right: '12px',
+                    fontSize: '4px',
+                    color: 'rgba(255,255,255,0.6)',
+                    textDecoration: 'none',
+                    zIndex: 3,
+                    pointerEvents: 'auto'
+                }}
+                target="_blank"
+                rel="noreferrer"
+            >
+                Brain Stock Videos by Vecteezy
+            </a>
         </div>
     );
 }

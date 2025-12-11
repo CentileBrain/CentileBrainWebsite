@@ -6857,7 +6857,7 @@ samp {
 }
 
 .explore-nav-link.active {
-    background: #001529;
+    background: #659bdf;
     color: white;
     box-shadow: 0 2px 10px rgba(0, 21, 41, 0.15);
 }
@@ -7094,7 +7094,265 @@ samp {
     -webkit-animation-delay: 0.3s;
             animation-delay: 0.3s;
 }
-@charset "UTF-8";
+
+body .explore-nav .explore-nav-link {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    line-height: 44px !important;
+}
+/* GLOBAL SETTINGS */
+.explore-root {
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    padding-bottom: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, sans-serif;
+}
+
+/* NAVIGATION */
+.explore-nav-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    width: 100%;
+}
+
+.explore-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    background: white;
+    padding: 4px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    width: 600px;
+    max-width: 90vw;
+}
+
+.explore-nav-link {
+    text-decoration: none;
+    color: #595959;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: 100%;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.explore-nav-link:hover {
+    color: #1890ff;
+    background: #f0f5ff;
+}
+
+.explore-nav-link.active {
+    background: #659bdf;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 21, 41, 0.15);
+}
+
+/* CARD STYLES */
+.polished-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    height: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.polished-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #001529;
+}
+
+.card-image-container {
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMAGE STYLES (Rounded & Zoomable) */
+.zoomable-image {
+    border-radius: 16px;
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+    display: block;
+}
+
+.zoomable-image:hover {
+    transform: scale(1.02);
+}
+
+/* --- ZOOM MODAL & ANIMATIONS --- */
+
+.zoom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 21, 41, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.3s ease-out forwards;
+    padding: 40px;
+}
+
+.zoom-container {
+    max-width: 95vw;
+    max-height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: zoomIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.zoom-container img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* PAGE ANIMATIONS */
+@keyframes softFade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-fade-in {
+    animation: softFade 0.5s ease-out forwards;
+}
+.card-slide-up {
+    opacity: 0;
+    animation: slideUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.card-fade-only {
+    opacity: 0;
+    animation: softFade 0.8s ease-out forwards;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+.delay-200 {
+    animation-delay: 0.2s;
+}
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+body .explore-nav .explore-nav-link {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    line-height: 44px !important;
+}
+/* Import Explore styles for consistent background and card effects */
+
+/* Specific styles for the Publication List */
+.publication-item {
+    padding: 24px;
+    border-radius: 12px;
+    -webkit-transition: background-color 0.2s ease, -webkit-transform 0.2s ease;
+    transition: background-color 0.2s ease, -webkit-transform 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.publication-item:last-child {
+    border-bottom: none;
+}
+
+.publication-item:hover {
+    background-color: rgba(0, 21, 41, 0.02); /* Subtle hover background */
+}
+
+.pub-text {
+    color: #262626;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.pub-meta {
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Button styling specific to this page to match the theme */
+.pub-button {
+    text-transform: none !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    padding: 6px 24px !important;
+    border: 1px solid #d9d9d9 !important;
+    color: #001529 !important;
+}
+
+.pub-button:hover {
+    border-color: #001529 !important;
+    background-color: rgba(0, 21, 41, 0.04) !important;
+}@charset "UTF-8";
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
@@ -23239,7 +23497,7 @@ footer .footer-flag {
     border-width: 6px;
   }
 }
-nav {
+.legacy-nav {
     position: relative;
     margin: 50px auto 0;
     width: 850px;
@@ -23249,7 +23507,7 @@ nav {
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
-nav a {
+.legacy-nav a {
     font-size: 15px;
     color: black;
     text-decoration: none;
@@ -23261,16 +23519,16 @@ nav a {
     text-align: center;
 }
 
-nav a:link {
+.legacy-nav a:link {
     text-decoration: none;
 }
 
-nav a:hover {
+.legacy-nav a:hover {
     text-decoration: none;
     color: black;
 }
 
-nav .animation {
+.legacy-nav .animation {
     position: absolute;
     height: 100%;
     top: 0;
@@ -23281,13 +23539,13 @@ nav .animation {
     transition: all 0.5s ease 0s !important;
 }
 
-nav .start-brainAgeModel,
-a:nth-child(1):hover ~ .animation {
+.legacy-nav .start-brainAgeModel,
+.legacy-nav a:nth-child(1):hover ~ .animation {
     width: 425px;
     left: 0;
 }
 
-nav .start-ownData,
+.legacy-nav .start-ownData,
 a:nth-child(2):hover ~ .animation {
     width: 425px;
     left: 425px;
@@ -23345,9 +23603,56 @@ a:nth-child(2):hover ~ .animation {
     width: 425px;
     left: 425px;
 }
-.FaqGrid {
-    position: relative;
-    margin: 50px auto 0;
-    width: 800px;
-    height: 50px;
+.MuiAccordion-root {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 0 !important;
+}
+
+.MuiAccordion-root:before {
+    display: none !important; 
+}
+
+.MuiAccordion-root:last-child {
+    border-bottom: none;
+}
+
+.MuiAccordionSummary-root {
+    padding: 0 24px !important;
+    min-height: 72px !important;
+    border-radius: 8px;
+    -webkit-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+
+.MuiAccordionSummary-root:hover {
+    background-color: rgba(0, 21, 41, 0.03);
+}
+
+.MuiAccordionSummary-content {
+    margin: 20px 0 !important;
+}
+
+/* The Expand Icon */
+.MuiAccordionSummary-expandIcon {
+    color: #659bdf !important; 
+}
+
+/* The Answer Body */
+.MuiAccordionDetails-root {
+    padding: 8px 24px 32px 24px !important;
+}
+
+/* Typography Overrides for this specific page */
+.faq-question-text {
+    font-weight: 600;
+    color: #001529;
+    font-size: 1.05rem;
+}
+
+.faq-answer-text {
+    color: #595959;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }

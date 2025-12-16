@@ -6,12 +6,9 @@ import Graphs from './Graphs';
 
 import {
     FormControl,
-    FormControlLabel,
-    FormGroup,
     InputLabel,
     MenuItem,
     Select,
-    Switch,
     Grid,
     ThemeProvider,
     createTheme,
@@ -19,46 +16,11 @@ import {
     CircularProgress
 } from '@material-ui/core';
 
-// PREMIUM THEME (Fixed Switch & Inputs)
+// PREMIUM THEME
 const premiumTheme = createTheme({
     palette: { primary: { main: '#001529' }, text: { primary: '#262626' } },
     shape: { borderRadius: 16 },
     overrides: {
-        // 1. ROBUST SWITCH STYLE (iOS style)
-        MuiSwitch: {
-            root: {
-                width: 42,
-                height: 26,
-                padding: 0,
-                margin: 8,
-            },
-            switchBase: {
-                padding: 1,
-                '&$checked': {
-                    transform: 'translateX(16px)',
-                    color: '#fff',
-                    '& + $track': {
-                        backgroundColor: '#001529',
-                        opacity: 1,
-                        border: 'none',
-                    },
-                },
-            },
-            thumb: {
-                width: 24,
-                height: 24,
-                backgroundColor: '#fff',
-                boxShadow: '0 2px 4px 0 rgba(0,0,0,0.2)',
-            },
-            track: {
-                borderRadius: 13,
-                border: '1px solid #bdbdbd',
-                backgroundColor: '#e0e0e0',
-                opacity: 1,
-                transition: 'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-            },
-        },
-        // 2. INPUT STYLES
         MuiOutlinedInput: {
             root: {
                 backgroundColor: '#f9f9f9',
@@ -91,11 +53,10 @@ export default function ExplorePage2(props) {
     const [volumes, setVolumes] = React.useState('');
     const [thickness, setThickness] = React.useState('');
     const [area, setArea] = React.useState('');
+    
+    // false = Centile Curves, true = MFP Regression
     const [MFPCurve, setMFPCurve] = React.useState(false);
 
-    const handleCurveChange = () => setMFPCurve(!MFPCurve);
-
-    // FIX LOADING: Wait 300ms to ensure the spinner is seen and transition is smooth
     useEffect(() => {
         const timer = setTimeout(() => {
             setReady(true);
@@ -119,7 +80,6 @@ export default function ExplorePage2(props) {
                     </nav>
                 </div>
 
-                {/* LOADING STATE */}
                 {!ready ? (
                     <div style={{ 
                         height: '60vh', 
@@ -135,7 +95,6 @@ export default function ExplorePage2(props) {
                 ) : (
                     <div className="page-fade-in" style={{ maxWidth: '1350px', margin: '0 auto', padding: '0 24px' }}>
                         
-                        {/* CONTROLS */}
                         <div className="card-slide-up delay-100">
                             <Paper elevation={0} className="polished-card" style={{ marginBottom: '30px', padding: '40px 30px' }}>
                                 <Grid container spacing={4} alignItems="center" justifyContent="center">
@@ -161,7 +120,7 @@ export default function ExplorePage2(props) {
                                         </FormControl>
                                     </Grid>
 
-                                    <Grid item xs={12} md={4}>
+                                    <Grid item xs={12} md={3}>
                                         <FormControl fullWidth variant="outlined">
                                             <InputLabel>Select Region</InputLabel>
                                             <Select 
@@ -174,7 +133,6 @@ export default function ExplorePage2(props) {
                                                 label="Select Region"
                                                 disabled={!morphometric} 
                                             >
-                                                {/* ITEMS */}
                                                 {morphometric === 'volumes' && [
                                                     <MenuItem key="thalamus" value="thalamus">Thalamus</MenuItem>,
                                                     <MenuItem key="caudate" value="caudate">Caudate</MenuItem>,
@@ -190,29 +148,48 @@ export default function ExplorePage2(props) {
                                                     <MenuItem key="3" value="3">Caudal Middle Frontal Cortex</MenuItem>,
                                                     <MenuItem key="4" value="4">Cuneus</MenuItem>,
                                                     <MenuItem key="34" value="34">Insula</MenuItem>
-                                                    // ... add others as needed
                                                 ]}
                                             </Select>
                                         </FormControl>
                                     </Grid>
 
-                                    <Grid item xs={12} md={2} style={{ display: 'flex', justifyContent: 'center' }}>
-                                        <FormControl component="fieldset">
-                                            <FormGroup>
-                                                <FormControlLabel
-                                                    control={<Switch checked={MFPCurve} onChange={handleCurveChange} color="primary" />}
-                                                    label={<span style={{ fontWeight: 600, color: '#595959', fontSize: '0.85rem' }}>{MFPCurve ? "MFP Regression" : "Centile Curves"}</span>}
-                                                    labelPlacement="bottom"
-                                                />
-                                            </FormGroup>
-                                        </FormControl>
+                                    {/* 3. TWO SEPARATE TOGGLE SWITCHES */}
+                                    <Grid item xs={12} md={3}>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
+                                            
+                                            {/* Switch 1: Centile Curves */}
+                                            <div className="toggle-wrapper">
+                                                <label className="custom-switch">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        checked={!MFPCurve} // Active if MFPCurve is false
+                                                        onChange={() => setMFPCurve(false)} 
+                                                    />
+                                                    <span className="slider round"></span>
+                                                </label>
+                                                <span className="toggle-label">Centile Curves</span>
+                                            </div>
+
+                                            {/* Switch 2: MFP Regression */}
+                                            <div className="toggle-wrapper">
+                                                <label className="custom-switch">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        checked={MFPCurve} // Active if MFPCurve is true
+                                                        onChange={() => setMFPCurve(true)} 
+                                                    />
+                                                    <span className="slider round"></span>
+                                                </label>
+                                                <span className="toggle-label">MFP Regression</span>
+                                            </div>
+
+                                        </div>
                                     </Grid>
 
                                 </Grid>
                             </Paper>
                         </div>
 
-                        {/* GRAPHS */}
                         <div className="card-fade-only delay-200">
                             <div className="polished-card" style={{ padding: '40px 20px', minHeight: '520px' }}>
                                 <Graphs

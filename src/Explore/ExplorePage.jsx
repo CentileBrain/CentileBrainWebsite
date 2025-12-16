@@ -7,7 +7,10 @@ import Header from '../Home/Header';
 export default function ExplorePage(props) {
     const location = useLocation();
     const [ready, setReady] = useState(false);
+    
+    // State for the image URL and the closing animation status
     const [selectedImage, setSelectedImage] = useState(null);
+    const [isClosing, setIsClosing] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -16,12 +19,37 @@ export default function ExplorePage(props) {
         return () => clearTimeout(timer);
     }, []);
 
-    const handleImageClick = (src) => {
-        setSelectedImage(src);
+    // Function to trigger the closing animation
+    const startClose = () => {
+        setIsClosing(true);
+        // Wait 300ms for the animation to finish, then actually remove the image
+        setTimeout(() => {
+            setSelectedImage(null);
+            setIsClosing(false);
+        }, 300); 
     };
 
-    const handleCloseZoom = () => {
-        setSelectedImage(null);
+    // Listen for 'Escape' key
+    useEffect(() => {
+        const handleEsc = (event) => {
+            if (event.key === 'Escape') {
+                startClose();
+            }
+        };
+        
+        // Only add listener if an image is currently open
+        if (selectedImage) {
+            window.addEventListener('keydown', handleEsc);
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleEsc);
+        };
+    }, [selectedImage]); // Re-run when selectedImage changes
+
+    const handleImageClick = (src) => {
+        setSelectedImage(src);
+        setIsClosing(false);
     };
 
     return (
@@ -99,7 +127,11 @@ export default function ExplorePage(props) {
             )}
 
             {selectedImage && (
-                <div className="zoom-overlay" onClick={handleCloseZoom}>
+                // We conditionally add the 'closing' class based on state
+                <div 
+                    className={`zoom-overlay ${isClosing ? 'closing' : ''}`} 
+                    onClick={startClose}
+                >
                     <div className="zoom-container">
                         <img src={selectedImage} alt="Zoomed View" />
                     </div>

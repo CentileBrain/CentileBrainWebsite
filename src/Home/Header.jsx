@@ -3,12 +3,26 @@ import enquire from 'enquire.js';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const MENU_ITEMS = [
+    { key: 'home', label: 'Home', path: '/' },
+    { key: 'explore', label: 'Explore CentileBrain', path: '/explore' },
+    { key: 'model_repository', label: 'CentileBrain Model', path: '/model' },
+    { key: 'brainAge', label: 'BrainAGE Model', path: '/brainAge_developmental' },
+    { key: 'faq', label: 'FAQ', path: '/faq' },
+    // CHANGE: Added '/#' to manually trigger the Hash Router in the new tab
+    { key: 'eHarmonize', label: 'eHarmonize', path: '/#/eHarmonize', newTab: true },
+    { key: 'publications', label: 'Publications', path: '/publications' },
+    { key: 'team', label: 'Core Team', path: '/team' },
+    { key: 'contact', label: 'Contact', path: '/contact' },
+];
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             menuMode: 'horizontal',
             showMobileMenu: false,
+            firstLoad: !sessionStorage.getItem('centileBrainHeaderShown'),
         };
         this.expandMobileMenu = this.expandMobileMenu.bind(this);
         this.collapseMobileMenu = this.collapseMobileMenu.bind(this);
@@ -23,6 +37,10 @@ class Header extends React.Component {
                 this.setState({ menuMode: 'horizontal' });
             },
         });
+
+        if (this.state.firstLoad) {
+            sessionStorage.setItem('centileBrainHeaderShown', 'true');
+        }
     }
 
     expandMobileMenu() {
@@ -34,7 +52,33 @@ class Header extends React.Component {
     }
 
     render() {
-        const { menuMode, showMobileMenu } = this.state;
+        const { menuMode, showMobileMenu, firstLoad } = this.state;
+
+        const headerStyles = `
+            @keyframes fadeInSlideRight {
+                0% {
+                    opacity: 0;
+                    transform: translateX(-20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            .ant-menu-item a, 
+            .ant-menu-item a:hover,
+            .ant-menu-item a:visited,
+            .ant-menu-item span {
+                text-decoration: none !important;
+                color: inherit !important; 
+            }
+
+            .nav-animate-enter {
+                animation: fadeInSlideRight 0.8s ease-out forwards;
+                opacity: 0;
+            }
+        `;
 
         const menu = (
             <Menu
@@ -42,64 +86,49 @@ class Header extends React.Component {
                 id="nav"
                 key="nav"
                 onClick={this.collapseMobileMenu}
+                style={{ borderBottom: 'none' }}
             >
-                <Menu.Item key="home">
-                    <a>Home</a>
-                    <Link to="/">Home</Link>
-                </Menu.Item>
-                <Menu.Item key="explore">
-                    <a>
-                        <span>Explore CentileBrain</span>
-                    </a>
-                    <Link to="/explore" />
-                </Menu.Item>
-                <Menu.Item key="model_repository">
-                    <a>
-                        <span>CentileBrain Model</span>
-                    </a>
-                    <Link to="/model" />
-                </Menu.Item>
-                <Menu.Item key="brainAge">
-                    <a>
-                        <span>BrainAGE Model</span>
-                    </a>
-                    <Link to="/brainAge_developmental" />
-                </Menu.Item>
-                <Menu.Item key="faq">
-                    <a>
-                        <span>FAQ</span>
-                    </a>
-                    <Link to="faq" />
-                </Menu.Item>
-                <Menu.Item key="eHarmonize">
-                    <a>
-                        <span>eHarmonize</span>
-                    </a>
-                    <Link to="eHarmonize" />
-                </Menu.Item>
-                <Menu.Item key="publications">
-                    <a>
-                        <span>Publications</span>
-                    </a>
-                    <Link to="/publications" />
-                </Menu.Item>
-                <Menu.Item key="team">
-                    <a>
-                        <span>Core Team</span>
-                    </a>
-                    <Link to="/team" />
-                </Menu.Item>
-                <Menu.Item key="contact">
-                    <a>
-                        <span>Contact</span>
-                    </a>
-                    <Link to="/contact" />
-                </Menu.Item>
+                {MENU_ITEMS.map((item, index) => {
+                    const shouldAnimate = firstLoad && menuMode === 'horizontal';
+                    
+                    const animationStyle = shouldAnimate
+                        ? { animationDelay: `${index * 0.1}s` }
+                        : { opacity: 1 };
+
+                    const className = shouldAnimate ? 'nav-animate-enter' : '';
+
+                    const linkComponent = item.newTab ? (
+                        <a 
+                            href={item.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ display: 'block', color: 'inherit' }}
+                        >
+                            {item.label}
+                        </a>
+                    ) : (
+                        <Link 
+                            to={item.path} 
+                            style={{ display: 'block', color: 'inherit' }}
+                        >
+                            {item.label}
+                        </Link>
+                    );
+
+                    return (
+                        <Menu.Item key={item.key}>
+                            <div className={className} style={animationStyle}>
+                                {linkComponent}
+                            </div>
+                        </Menu.Item>
+                    );
+                })}
             </Menu>
         );
 
         return (
             <div id="header" className="header">
+                <style>{headerStyles}</style>
                 {menuMode === 'inline' && !showMobileMenu && (
                     <Icon
                         type="bars"
@@ -110,13 +139,13 @@ class Header extends React.Component {
                 {menuMode === 'inline' && showMobileMenu && menu}
                 <Row>
                     <Col
-                        xxl={24}  
-                        xl={24}   
-                        lg={24}   
-                        md={24}   
+                        xxl={24}
+                        xl={24}
+                        lg={24}
+                        md={24}
                         sm={0}
                         xs={0}
-                        offset={0} 
+                        offset={0}
                         style={{
                             display: 'flex',
                             justifyContent: 'center',

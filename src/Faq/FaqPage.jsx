@@ -130,9 +130,8 @@ export default function FaqPage(props) {
                     </div>
 
                     <div className="card-slide-up delay-200" style={{ textAlign: 'center', marginTop: '40px', color: '#888', fontSize: '1rem' }}>
-                        Version: August 2024
+                        Version: March 2026
                     </div>
-
                 </div>
             </div>
         </ThemeProvider>

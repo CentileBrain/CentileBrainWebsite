@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const MENU_ITEMS = [
     { key: 'home', label: 'Home', path: '/' },
     { key: 'explore', label: 'Explore CentileBrain', path: '/explore' },
-    { key: 'model_repository', label: 'CentileBrain Model', path: '/model' },
+    { key: 'model_repository', label: 'CentileBrain Models', path: '/model' },
     { key: 'brainAge', label: 'BrainAGE Models', path: '/brainAge_developmental' },
     { key: 'faq', label: 'FAQ', path: '/faq' },
     // CHANGE: Added '/#' to manually trigger the Hash Router in the new tab

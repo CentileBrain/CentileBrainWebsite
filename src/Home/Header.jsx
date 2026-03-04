@@ -7,7 +7,7 @@ const MENU_ITEMS = [
     { key: 'home', label: 'Home', path: '/' },
     { key: 'explore', label: 'Explore CentileBrain', path: '/explore' },
     { key: 'model_repository', label: 'CentileBrain Model', path: '/model' },
-    { key: 'brainAge', label: 'BrainAGE Model', path: '/brainAge_developmental' },
+    { key: 'brainAge', label: 'BrainAGE Models', path: '/brainAge_developmental' },
     { key: 'faq', label: 'FAQ', path: '/faq' },
     // CHANGE: Added '/#' to manually trigger the Hash Router in the new tab
     { key: 'eHarmonize', label: 'eHarmonize', path: '/#/eHarmonize', newTab: true },

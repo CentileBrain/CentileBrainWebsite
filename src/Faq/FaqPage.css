@@ -8,14 +8,13 @@
 }
 
 .MuiAccordion-root:before {
-    display: none !important;
+    display: none !important; 
 }
 
 .MuiAccordion-root:last-child {
     border-bottom: none;
 }
 
-/* Increased min-height and horizontal padding for a wider, more premium feel */
 .MuiAccordionSummary-root {
     padding: 0 32px !important;
     min-height: 88px !important;
@@ -27,32 +26,14 @@
     background-color: rgba(0, 21, 41, 0.03);
 }
 
-/* Increased vertical margin to give the larger question text more room to breathe */
 .MuiAccordionSummary-content {
     margin: 24px 0 !important;
 }
 
-/* The Expand Icon */
 .MuiAccordionSummary-expandIcon {
-    color: #659bdf !important;
+    color: #659bdf !important; 
 }
 
-/* Proportionally increased padding for the expanded answer area */
 .MuiAccordionDetails-root {
     padding: 16px 32px 48px 32px !important;
-}
-
-/* Typography Overrides for this specific page */
-.faq-question-text {
-    font-weight: 600;
-    color: #001529;
-    font-size: 2.5rem; /* Scaled up significantly for the question banners */
-    letter-spacing: -0.015em; /* Tightens the spacing slightly for a polished look on large text */
-    line-height: 1.4; /* Ensures multi-line questions still look clean */
-}
-
-.faq-answer-text {
-    color: #2f2f2f;
-    line-height: 1.85;
-    font-size: 1.15rem;
 }

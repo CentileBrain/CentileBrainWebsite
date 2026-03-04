@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import Header from '../Home/Header';
 
-// Material UI Imports
 import {
     ThemeProvider,
     createTheme,
@@ -16,7 +15,6 @@ import {
 import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
 import LaunchIcon from '@material-ui/icons/Launch';
 
-// 1. Define the Premium Theme
 const premiumTheme = createTheme({
     palette: { primary: { main: '#001529' }, text: { primary: '#262626' } },
     shape: { borderRadius: 16 },

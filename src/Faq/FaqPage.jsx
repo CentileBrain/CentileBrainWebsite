@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-// 1. Define the Premium Theme (Matching ExplorePage2)
+// 1. Define the Premium Theme
 const premiumTheme = createTheme({
     palette: { primary: { main: '#001529' }, text: { primary: '#262626' } },
     shape: { borderRadius: 16 },
@@ -24,10 +24,7 @@ const premiumTheme = createTheme({
 });
 
 export default function FaqPage(props) {
-    // State to handle the "fade in" effect
     const [ready, setReady] = useState(false);
-    
-    // State to manage which accordion is expanded
     const [expanded, setExpanded] = useState(false);
 
     const handleChange = (panel) => (event, isExpanded) => {
@@ -78,27 +75,23 @@ export default function FaqPage(props) {
         'While the CentileBrain platform can apply CombatGAM to your dataset, this process may slow down computations and potentially cause time-outs. We recommend pre-processing your dataset with CombatGAM outside of CentileBrain platform using <a href="https://github.com/CentileBrain/centilebrain/tree/main/Python_R_codes/combatGAM_script" target="_blank" style="color:#1890ff;text-decoration:none;"><b>customized script</b></a>. Afterwards, you can upload the harmonized data of your entire sample (regardless of size). When using already harmonized data, please enter the character “A” for all entries in the “SITE” column on the spreadsheet so that the CentileBrain algorithm skips the harmonization step. ',
         'The normative models in CentileBrain cannot process multisite data if any site contributes fewer than 5 participants. In such cases, please either assign these participants to the site with the largest sample (preferred) or upload the data from each site with such small samples separately.',
         'Yes, but we do not recommend using them, as they are less accurate than the models we provide on the main Centilebrain web platform. However, if you would like to explore these models, you can find them <a href="https://github.com/CentileBrain/centilebrain/tree/main/models_without_globalMeasures" target="_blank" style="color:#1890ff;text-decoration:none;"><b>here</b></a>.',
-        'Although conceptually similar, the normative z-score and the generic z-score have important differences, so they are not equivalent. A generic z-score is a standardized value that expresses the degree to which an individual measure deviates from the mean of a specific sample. Its value depend entirely on the characteristics of the dataset used to derive the mean and standard deviation (SD). Therefore, it can only be used for comparisons within that specific dataset. A normative z-score is a standardized value that expresses the degree to which an individual measure deviates from an established age-and sex norms, not merely from the average of a specific dataset. Therefore, it can be used for cross-study comparisons. For example, if you compute a generic z-score using a single mean and SD from a sample that spans a wide age range, an individual can look unusually high or low simply because the sample mean depends on the mix of ages included. In that setting, the z-score reflects how the person compares with this age-mixed reference group, rather than whether they are atypical for their own age. A normative z-score avoids this problem by comparing the person with the age-appropriate expected value and variability.',
+        'Although conceptually similar, the normative z-score and the generic z-score have important differences, so they are not equivalent. <br />A generic z-score is a standardized value that expresses the degree to which an individual measure deviates from the mean of a specific sample. Its value depend entirely on the characteristics of the dataset used to derive the mean and standard deviation (SD). Therefore, it can only be used for comparisons within that specific dataset. <br />A normative z-score is a standardized value that expresses the degree to which an individual measure deviates from an established age-and sex norms, not merely from the average of a specific dataset. Therefore, it can be used for cross-study comparisons. <br />For example, if you compute a generic z-score using a single mean and SD from a sample that spans a wide age range, an individual can look unusually high or low simply because the sample mean depends on the mix of ages included. In that setting, the z-score reflects how the person compares with this age-mixed reference group, rather than whether they are atypical for their own age. A normative z-score avoids this problem by comparing the person with the age-appropriate expected value and variability.',
         'The CentileBrain platform provides three model classes for brain-age-gap-estimates (brainAGE) : (1) developmental global brainAGE for individuals aged 5-22 years; (2) global brainAGE for individuals aged 5-90 years; and (3) network-based brainAGE for individuals aged 5-90 years. Global brainAGE is a single summary index derived from models trained to predict chronological age from whole-brain structural features. Network brainAGE follows the same basic idea but it is computed separately by predicting chronological age the level of brain networks. The CentileBrain models provide brainAGE for the 7 canonical networks: visual, somatomotor, dorsal attention, ventral attention (salience), limbic, frontoparietal control (executive control), and default mode networks (Yeo et al., 2011; doi: 10.1152/jn.00338.2011). Each brainAGE model class yields two outputs:<br /><br />(a) Adjusted Predicted Age: Predicted age is the age the model estimates from a person\'s brain imaging features; the predicted age is also adjusted using bias-correction step that removes systematic dependence of prediction error on chronological age.<br /><br />(b) Adjusted brainAGE: This is computed as predicted age minus the person\'s actual chronological age adjusted to remove dependence on chronological age.',
         'BrainAGE models typically show age-dependent bias (younger individuals are overpredicted and older individuals are underpredicted). Age adjustment corrects this by calibrating predicted age to chronological age using regression functions. The CentileBrain brainAGE models optimize accuracy by using a combination of linear and non-linear functions that are customised to each uploaded dataset by estimating the adjustment from the observed age-prediction relationship in that dataset, then applying it to generate an adjusted predicted age.'
     ];
 
     return (
         <ThemeProvider theme={premiumTheme}>
-            {/* 1. Global Wrapper (.explore-root) */}
             <div className="explore-root">
                 <Header />
 
-                {/* Loading state check to prevent flash of unstyled content */}
                 <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px 60px 24px' }}>
                     
-                    {/* Title Section */}
+                    {/* Title Section matching Publications Page size */}
                     <div style={{ textAlign: 'center', marginTop: '50px', marginBottom: '50px' }} className={`page-fade-in ${ready ? '' : 'hidden'}`}>
-                        {/* Scaled up the main title and adjusted letter spacing */}
-                        <Typography variant="h3" style={{ fontWeight: 700, color: '#001529', fontSize: '2.5rem', letterSpacing: '-0.02em' }}>
+                        <Typography variant="h3" style={{ fontWeight: 700, color: '#001529', fontSize: '2.0rem', letterSpacing: '-0.02em' }}>
                             Frequently Asked Questions
                         </Typography>
-                        {/* Scaled up the subtitle text */}
                         <Typography variant="body1" style={{ color: '#595959', marginTop: '16px', fontSize: '1.25rem' }}>
                             Everything you need to know about the CentileBrain platform
                         </Typography>
@@ -117,13 +110,13 @@ export default function FaqPage(props) {
                                     aria-controls={`panel${index}bh-content`}
                                     id={`panel${index}bh-header`}
                                 >
-                                    {/* INLINE STYLES APPLIED HERE FOR THE QUESTION TEXT */}
+                                    {/* Inline styles for Question Text */}
                                     <Typography style={{ fontSize: '1.5rem', fontWeight: 600, color: '#001529', lineHeight: 1.3 }}>
                                         {question}
                                     </Typography>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    {/* INLINE STYLES APPLIED HERE FOR THE ANSWER TEXT */}
+                                    {/* Inline styles for Answer Text */}
                                     <Box style={{ fontSize: '1.15rem', color: '#595959', lineHeight: 1.8 }}>
                                         <span
                                             dangerouslySetInnerHTML={{
@@ -136,9 +129,8 @@ export default function FaqPage(props) {
                         ))}
                     </div>
 
-                    {/* Footer / Version info */}
                     <div className="card-slide-up delay-200" style={{ textAlign: 'center', marginTop: '40px', color: '#888', fontSize: '1rem' }}>
-                        Version: March 2026
+                        Version: August 2024
                     </div>
 
                 </div>

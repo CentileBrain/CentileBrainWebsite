@@ -72902,6 +72902,10 @@ webpackJsonp([1,0],[
 	        info: 'Alyssa H. Zhu, etc, Paul M. Thompson, Neda Jahanshad, Alzheimer’s Disease Neuroimaging Initiative. Lifespan reference curves for harmonizing multi-site regional brain white matter metrics from diffusion MRI. 2024; doi: 10.1101/2024.02.22.581646',
 	        link: 'https://www.biorxiv.org/content/10.1101/2024.02.22.581646',
 	        id: (0, _uuid.v4)()
+	    }, {
+	        info: 'Wang H. R, etc, Frangou S, Thompson P. Childhood Maltreatment and Deviations from Normative Brain Structure: A Mega-Analysis of 3,711 Individuals from the ENIGMA MDD and ENIGMA PTSD Working Groups.',
+	        link: 'https://www.biologicalpsychiatryjournal.com/article/S0006-3223(26)00093-4/fulltext',
+	        id: (0, _uuid.v4)()
 	    }];
 
 	    return _react2.default.createElement(

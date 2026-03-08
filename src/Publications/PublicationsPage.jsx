@@ -80,7 +80,7 @@ export default function PublicationsPage(props) {
             id: uuid(),
         },
         {
-            info: 'Wang H. R, etc, Frangou S, Thompson P, Tiffany C. Ho. Childhood Maltreatment and Deviations from Normative Brain Structure: A Mega-Analysis of 3,711 Individuals from the ENIGMA MDD and ENIGMA PTSD Working Groups. Biological Psychiatry. 2026. DOI: 10.1016/j.biopsych.2026.02.016',
+            info: 'Wang H. R, etc, Frangou S, Thompson P, ... , Tiffany C. Ho. Childhood Maltreatment and Deviations from Normative Brain Structure: A Mega-Analysis of 3,711 Individuals from the ENIGMA MDD and ENIGMA PTSD Working Groups. Biological Psychiatry. 2026. DOI: 10.1016/j.biopsych.2026.02.016',
             link: 'https://www.biologicalpsychiatryjournal.com/article/S0006-3223(26)00093-4/fulltext',
             id: uuid(),
         }

@@ -79,6 +79,11 @@ export default function PublicationsPage(props) {
             link: 'https://www.biorxiv.org/content/10.1101/2024.02.22.581646',
             id: uuid(),
         },
+        {
+            info: 'Wang H. R, etc, Frangou S, Thompson P. Childhood Maltreatment and Deviations from Normative Brain Structure: A Mega-Analysis of 3,711 Individuals from the ENIGMA MDD and ENIGMA PTSD Working Groups.',
+            link: 'https://www.biologicalpsychiatryjournal.com/article/S0006-3223(26)00093-4/fulltext',
+            id: uuid(),
+        }
     ];
 
     return (

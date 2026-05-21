@@ -69,12 +69,12 @@ export default function PublicationsPage(props) {
                     id: uuid(),
                 },
                 {
-                    info: 'Frangou S, Modabbernia A, Williams SCR, et al., Thompson PM, Dima D. Cortical thickness across the lifespan: Data from 17,075 healthy individuals aged 3-90 years. Hum Brain Mapp. 2022;43(1):431-451. doi: 10.1002/hbm.25364',
+                    info: 'Frangou S, Modabbernia A, Williams SCR, et al., Thompson PM, Dima D. Cortical thickness across the lifespan: Data from 17,075 healthy individuals aged 3-90 years. Hum Brain Mapp. 2021;43(1):431-451. doi: 10.1002/hbm.25364',
                     link: 'https://onlinelibrary.wiley.com/doi/10.1002/hbm.25364',
                     id: uuid(),
                 },
                 {
-                    info: 'Dima D, Modabbernia A, Papachristou E, et al., Thompson PM, Frangou S.  Subcortical volumes across the lifespan: Data from 18,605 healthy individuals aged 3-90 years. Hum Brain Mapp. 2022;43(1):452-469. doi: 10.1002/hbm.25320',
+                    info: 'Dima D, Modabbernia A, Papachristou E, et al., Thompson PM, Frangou S.  Subcortical volumes across the lifespan: Data from 18,605 healthy individuals aged 3-90 years. Hum Brain Mapp. 2021;43(1):452-469. doi: 10.1002/hbm.25320',
                     link: 'https://onlinelibrary.wiley.com/doi/10.1002/hbm.25320',
                     id: uuid(),
                 }
@@ -228,4 +228,4 @@ function PublicationItem({ info, link }) {
             </Grid>
         </div>
     );
-}
+}  

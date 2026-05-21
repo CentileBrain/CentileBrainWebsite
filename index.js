@@ -72890,7 +72890,7 @@ webpackJsonp([1,0],[
 	            link: 'https://onlinelibrary.wiley.com/doi/10.1002/hbm.26010',
 	            id: (0, _uuid.v4)()
 	        }, {
-	            info: 'Wierenga LM, Doucet GE, Dima D, et al., Frangou S, Tamnes CK. Greater male than female variability in regional brain structure across the lifespan [published online ahead of print, 2020 Oct 12]. Hum Brain Mapp. 2022;43(1):470-499. doi: 10.1002/hbm.25204',
+	            info: 'Wierenga LM, Doucet GE, Dima D, et al., Frangou S, Tamnes CK. Greater male than female variability in regional brain structure across the lifespan. Hum Brain Mapp. 2022;43(1):470-499. doi: 10.1002/hbm.25204',
 	            link: 'https://onlinelibrary.wiley.com/doi/10.1002/hbm.25204',
 	            id: (0, _uuid.v4)()
 	        }, {

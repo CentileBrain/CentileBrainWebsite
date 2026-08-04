@@ -72905,6 +72905,10 @@ webpackJsonp([1,0],[
 	    }, {
 	        title: "Applications to clinical groups and population neuroscience",
 	        items: [{
+	            info: 'Sanford N, Yu Y, Ge R, Haas SS, Galea LAM, Frangou S. Lifestyle and BrainAGE in adult depression. Transl Psychiatry. 2026; doi: 10.1038/s41398-026-04297-8',
+	            link: 'https://www.nature.com/articles/s41398-026-04297-8',
+	            id: (0, _uuid.v4)()
+	        }, {
 	            info: 'Wang HR, et al., Frangou S, Thompson PM, ... , Ho TC. Childhood Maltreatment and Deviations from Normative Brain Structure: A Mega-Analysis of 3,711 Individuals from the ENIGMA MDD and ENIGMA PTSD Working Groups. Biological Psychiatry. 2026. doi: 10.1016/j.biopsych.2026.02.016',
 	            link: 'https://doi.org/10.1016/j.biopsych.2026.02.016',
 	            id: (0, _uuid.v4)()

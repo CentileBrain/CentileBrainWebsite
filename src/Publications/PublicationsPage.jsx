@@ -84,6 +84,11 @@ export default function PublicationsPage(props) {
             title: "Applications to clinical groups and population neuroscience",
             items: [
                 {
+                    info: 'Sanford N, Yu Y, Ge R, Haas SS, Galea LAM, Frangou S. Lifestyle and BrainAGE in adult depression. Transl Psychiatry. 2026; doi: 10.1038/s41398-026-04297-8',
+                    link: 'https://www.nature.com/articles/s41398-026-04297-8',
+                    id: uuid(),
+                },
+                {
                     info: 'Wang HR, et al., Frangou S, Thompson PM, ... , Ho TC. Childhood Maltreatment and Deviations from Normative Brain Structure: A Mega-Analysis of 3,711 Individuals from the ENIGMA MDD and ENIGMA PTSD Working Groups. Biological Psychiatry. 2026. doi: 10.1016/j.biopsych.2026.02.016',
                     link: 'https://doi.org/10.1016/j.biopsych.2026.02.016',
                     id: uuid(),
@@ -228,4 +233,4 @@ function PublicationItem({ info, link }) {
             </Grid>
         </div>
     );
-}  
+}
